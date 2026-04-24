@@ -102,3 +102,46 @@ if ('ontouchstart' in window) {
   ring.style.display = 'none';
   document.body.style.cursor = 'auto';
 }
+
+// Web3Forms AJAX submission
+const web3form = document.getElementById('web3form');
+const formOk = document.getElementById('form-ok');
+const submitBtn = document.getElementById('submitBtn');
+
+if (web3form) {
+  web3form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Disable button & show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Collect form data
+    const formData = new FormData(web3form);
+    
+    try {
+      const response = await fetch(web3form.action, {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json();
+      
+      if (result.success) {
+        // Success
+        web3form.reset();
+        formOk.style.display = 'block';
+        setTimeout(() => {
+          formOk.style.display = 'none';
+        }, 5000);
+      } else {
+        alert('Error: ' + (result.message || 'Something went wrong. Please try again.'));
+      }
+    } catch (error) {
+      alert('Network error. Please check your connection and try again.');
+    } finally {
+      // Re-enable button
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message →';
+    }
+  });
+}

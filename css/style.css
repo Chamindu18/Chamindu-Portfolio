@@ -1142,3 +1142,9 @@ footer {
   position: relative;
   z-index: 3;
 }
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;

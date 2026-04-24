@@ -97,7 +97,7 @@
 <section id="projects">
   <div class="projects-header reveal">
     <div><div class="section-tag">What I've Built</div><h2 class="section-title">My <em>projects</em></h2></div>
-    <a href="https://github.com/yourusername" target="_blank" class="btn-secondary" style="height:fit-content;">GitHub &nearr;</a>
+    <a href="https://github.com/Chamindu18" target="_blank" class="btn-secondary" style="height:fit-content;">GitHub &nearr;</a>
   </div>
   <div class="projects-grid">
     <div class="project-card reveal">
@@ -178,15 +178,45 @@
       </div>
     </div>
     <div class="contact-form reveal reveal-d1">
-      <div class="form-row">
-        <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="John" /></div>
-        <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Doe" /></div>
-      </div>
-      <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="john@example.com" /></div>
-      <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" placeholder="Collaboration, Internship, Hello..." /></div>
-      <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Tell me what's on your mind..."></textarea></div>
-      <button class="btn-submit" onclick="submitForm()">Send Message &rarr;</button>
-      <p id="form-ok">&#x2713; Message sent! I'll get back to you soon.</p>
+        <form action="https://api.web3forms.com/submit" method="POST" id="web3form">
+            <!-- Access Key (replace with your actual key) -->
+            <input type="hidden" name="access_key" value="3bc1608f-59bf-44ad-9ea6-47ae36c35475">
+    
+            <!-- Optional: Redirect after success (stay on same page) -->
+            <input type="hidden" name="redirect" value="false">
+    
+            <!-- Custom subject line -->
+            <input type="hidden" name="subject" value="New Portfolio Message from Chamindu's Portfolio!">
+    
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="name" placeholder="John" required />
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="last_name" placeholder="Doe" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject_line" placeholder="Collaboration, Internship, Hello..." required />
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me what's on your mind..." required></textarea>
+            </div>
+    
+            <!-- Honeypot spam protection (keep as is) -->
+            <input type="checkbox" name="botcheck" style="display: none;">
+    
+            <button type="submit" class="btn-submit" id="submitBtn">Send Message &rarr;</button>
+            <p id="form-ok" style="display:none;">✓ Message sent! I'll get back to you soon.</p>
+        </form>
     </div>
   </div>
 </section>
