@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chamindu — Full Stack Developer</title>
+  <meta name="description" content="Chamindu — Computer Science Undergraduate & Full Stack Developer at NSBM Green University" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#x2715;</button>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#skills" onclick="closeMob()">Skills</a>
+  <a href="#projects" onclick="closeMob()">Projects</a>
+  <a href="#education" onclick="closeMob()">Education</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Chamindu<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Contact Me &rarr;</a>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<section id="hero">
+  <div class="hero-bg-text">CS</div>
+  <div class="hero-tag">Open to Opportunities</div>
+  <h1 class="hero-name">Chamindu<br><em>CS Undergraduate</em><br>&amp; Developer</h1>
+  <p class="hero-sub">I'm a passionate full-stack developer in training &mdash; building modern web applications, exploring cybersecurity, and turning ideas into real-world software.</p>
+  <div class="hero-actions">
+    <a href="#projects" class="btn-primary">View My Projects &rarr;</a>
+    <a href="#contact" class="btn-secondary">Get in Touch &nearr;</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">4<span>+</span></div><div class="stat-label">Projects Built</div></div>
+    <div><div class="stat-num">2<span>nd</span></div><div class="stat-label">Year CS Student</div></div>
+    <div><div class="stat-num">&infin;</div><div class="stat-label">Curiosity Level</div></div>
+  </div>
+  <div class="hero-scroll">Scroll<div class="scroll-line"></div></div>
+</section>
+<div class="divider"></div>
+<section id="about">
+  <div class="section-tag">Who I Am</div>
+  <h2 class="section-title">Turning curiosity<br>into <em>code</em></h2>
+  <div class="about-grid">
+    <div class="about-image-wrap reveal">
+        <div class="about-image-frame">
+            <div class="radiant-border">
+                <img src="assets/profile.jpeg" alt="Chamindu" class="profile-img">
+            </div>
+        </div>
+      <div class="about-accent-box"><p>NSBM</p><span>Green Univ.</span></div>
+    </div>
+    <div class="about-text reveal reveal-d1">
+      <p>Hi, I'm <strong>Chamindu</strong> &mdash; a Computer Science undergraduate at <strong>NSBM Green University</strong>. I'm passionate about full-stack development, cybersecurity, and building applications that solve real problems.</p>
+      <p>I'm sharpening my skills through hands-on projects in <strong>HTML, CSS, Java, and Python</strong>. I enjoy digging into how things work and pushing myself to learn technologies that matter.</p>
+      <p>Outside of code, I'm into <strong>gaming, anime, and exploring tech</strong> &mdash; always looking for the next thing that sparks my curiosity.</p>
+      <div class="about-highlights">
+        <div class="highlight-item"><div class="icon">&#x1F510;</div><h4>Cybersecurity Interest</h4><p>Fascinated by security, ethical hacking &amp; digital defence.</p></div>
+        <div class="highlight-item"><div class="icon">&#x1F310;</div><h4>Full-Stack Dev</h4><p>Building end-to-end apps from UI to database.</p></div>
+        <div class="highlight-item"><div class="icon">&#x1F680;</div><h4>Fast Learner</h4><p>Always picking up new languages, tools &amp; frameworks.</p></div>
+        <div class="highlight-item"><div class="icon">&#x1F3AE;</div><h4>Creative Mind</h4><p>Gaming &amp; anime fuel my creative problem-solving.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="skills">
+  <div class="section-tag">What I Know</div>
+  <h2 class="section-title">My <em>skills</em> &amp;<br>tech stack</h2>
+  <div class="skills-grid reveal">
+    <div class="skill-category"><div class="skill-cat-title">Frontend</div><div class="skill-tags"><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Bootstrap</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">Backend</div><div class="skill-tags"><span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">OOP</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">Database</div><div class="skill-tags"><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">SQL</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">Tools</div><div class="skill-tags"><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">VS Code</span><span class="skill-tag">IntelliJ</span></div></div>
+  </div>
+  <div class="skills-bars reveal reveal-d1">
+    <h3>Proficiency Levels</h3>
+    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">HTML &amp; CSS</span><span class="skill-bar-pct">80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div></div>
+    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">Java</span><span class="skill-bar-pct">70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div></div>
+    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">Python</span><span class="skill-bar-pct">65%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div></div>
+    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">MySQL / PostgreSQL</span><span class="skill-bar-pct">60%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div></div>
+    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">JavaScript</span><span class="skill-bar-pct">50%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="projects">
+  <div class="projects-header reveal">
+    <div><div class="section-tag">What I've Built</div><h2 class="section-title">My <em>projects</em></h2></div>
+    <a href="https://github.com/yourusername" target="_blank" class="btn-secondary" style="height:fit-content;">GitHub &nearr;</a>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-num">01 &mdash; Featured</div>
+      <div class="project-name">AnimeWorld Website</div>
+      <p class="project-desc">A fully responsive website built to showcase anime content with category browsing and a clean, modern UI. Focused on semantic HTML structure and CSS layout mastery.</p>
+      <div class="project-tech"><span class="tech-pill">HTML5</span><span class="tech-pill">CSS3</span><span class="tech-pill">Responsive Design</span></div>
+      <div class="project-links"><a href="#" class="project-link">&nearr; Live Demo</a><a href="#" class="project-link">GitHub</a></div>
+    </div>
+    <div class="project-card reveal reveal-d1">
+      <div class="project-num">02</div>
+      <div class="project-name">Explore Ceylon</div>
+      <p class="project-desc">A tourism website celebrating Sri Lanka, built as a group project. Features destination showcases, cultural highlights, and a fully responsive layout across all devices.</p>
+      <div class="project-tech"><span class="tech-pill">HTML5</span><span class="tech-pill">CSS3</span><span class="tech-pill">Group Project</span></div>
+      <div class="project-links"><a href="#" class="project-link">&nearr; Live Demo</a><a href="#" class="project-link">GitHub</a></div>
+    </div>
+    <div class="project-card reveal reveal-d2">
+      <div class="project-num">03</div>
+      <div class="project-name">Salon Website</div>
+      <p class="project-desc">A modern, professional salon website with service listings, booking section, and gallery. Built with Bootstrap for a polished, responsive experience across screen sizes.</p>
+      <div class="project-tech"><span class="tech-pill">HTML5</span><span class="tech-pill">CSS3</span><span class="tech-pill">Bootstrap</span></div>
+      <div class="project-links"><a href="#" class="project-link">&nearr; Live Demo</a><a href="#" class="project-link">GitHub</a></div>
+    </div>
+    <div class="project-card reveal reveal-d3">
+      <div class="project-num">04</div>
+      <div class="project-name">Java Login System</div>
+      <p class="project-desc">A console-based login system built in Java for an OOP assignment. Demonstrates core OOP principles: encapsulation, classes, and user authentication logic.</p>
+      <div class="project-tech"><span class="tech-pill">Java</span><span class="tech-pill">OOP</span><span class="tech-pill">Console App</span></div>
+      <div class="project-links"><a href="#" class="project-link">GitHub</a></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="education">
+  <div class="section-tag">My Journey</div>
+  <h2 class="section-title">Education &amp;<br><em>learning path</em></h2>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-badge">Current &middot; 2024 &mdash; Present</div>
+      <div class="edu-degree">BSc (Hons) Computer Science</div>
+      <div class="edu-school">NSBM Green University &middot; Sri Lanka</div>
+      <p class="edu-desc">Studying core CS fundamentals while actively building real-world projects to strengthen practical skills.</p>
+      <ul class="learning-list">
+        <li>Programming &amp; OOP with Java</li>
+        <li>Database Systems (MySQL, PostgreSQL)</li>
+        <li>Data Structures &amp; Algorithms</li>
+        <li>Web Technologies &amp; Development</li>
+        <li>Cybersecurity Fundamentals</li>
+      </ul>
+    </div>
+    <div class="edu-card reveal reveal-d1">
+      <div class="edu-badge">Self-Learning &middot; Ongoing</div>
+      <div class="edu-degree">Full-Stack Development</div>
+      <div class="edu-school">Online Resources &amp; Personal Projects</div>
+      <p class="edu-desc">Continuously expanding skills beyond the classroom through hands-on projects, online courses, and dev communities.</p>
+      <ul class="learning-list">
+        <li>Advanced JavaScript &amp; ES6+</li>
+        <li>React.js &amp; modern frontend</li>
+        <li>Python for backend development</li>
+        <li>Git version control &amp; collaboration</li>
+        <li>Cybersecurity &amp; ethical hacking basics</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="contact">
+  <div class="section-tag">Get In Touch</div>
+  <h2 class="section-title">Open to <em>learning</em><br>&amp; collaborations</h2>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3>Let's build something together or just say hello</h3>
+      <p>Whether you have a project idea, a collaboration in mind, or just want to connect &mdash; I'm always happy to chat. I'll reply as soon as I can!</p>
+      <div class="contact-links">
+        <a href="mailto:chamindu553@gmail.com" class="contact-link-item"><div class="link-icon">&#x2709;&#xFE0F;</div><div><div class="link-label">Email</div><div class="link-val">chamindu553@gmail.com</div></div></a>
+        <a href="https://github.com/Chamindu18" target="_blank" class="contact-link-item"><div class="link-icon">&#x26A1;</div><div><div class="link-label">GitHub</div><div class="link-val">github.com/Chamindu18</div></div></a>
+        <a href="https://www.linkedin.com/in/chamindu-hansana-a0b39a362?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="contact-link-item"><div class="link-icon">&#x1F517;</div><div><div class="link-label">LinkedIn</div><div class="link-val">linkedin.com/in/chamindu-hansana-a0b39a362</div></div></a>
+      </div>
+    </div>
+    <div class="contact-form reveal reveal-d1">
+      <div class="form-row">
+        <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="John" /></div>
+        <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Doe" /></div>
+      </div>
+      <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="john@example.com" /></div>
+      <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" placeholder="Collaboration, Internship, Hello..." /></div>
+      <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Tell me what's on your mind..."></textarea></div>
+      <button class="btn-submit" onclick="submitForm()">Send Message &rarr;</button>
+      <p id="form-ok">&#x2713; Message sent! I'll get back to you soon.</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <p class="footer-copy">&copy; 2026 <span>Chamindu</span>. Built with consistency &amp; curiosity.</p>
+  <div class="footer-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+  <a href="#hero" class="back-top">&uarr;</a>
+</footer>
+
+<script src="js/canvas.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
