@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
+    <style>
     /* Additional styles specific to projects page */
     .projects-page {
       padding-top: 120px;
@@ -40,6 +40,24 @@
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
+    }
+    
+    /* FIX: Make images fully visible without cropping */
+    .projects-grid-full .project-image {
+      height: auto;
+      min-height: 200px;
+      max-height: 280px;
+      background: rgba(17, 17, 24, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .projects-grid-full .project-image img {
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+      max-height: 280px;
     }
     
     .page-stats {
@@ -79,6 +97,15 @@
       .projects-grid-full {
         grid-template-columns: 1fr;
         gap: 1rem;
+      }
+      
+      .projects-grid-full .project-image {
+        min-height: 160px;
+        max-height: 220px;
+      }
+      
+      .projects-grid-full .project-image img {
+        max-height: 220px;
       }
       
       .page-stats {
@@ -133,7 +160,7 @@
       <div class="section-tag">Complete Collection</div>
       <h1 class="section-title">All <em>Projects</em></h1>
       <p class="hero-sub" style="max-width: 700px; margin-top: 1rem;">
-        Here's a complete list of all my work — from web development to programming assignments. 
+        Here's a complete list of my completed work — full-stack applications, PHP websites, and modern interactive portfolios. 
         Each project represents a unique challenge and learning opportunity.
       </p>
     </div>
@@ -141,148 +168,113 @@
     <!-- Stats -->
     <div class="page-stats">
       <div class="page-stat">
-        <span class="page-stat-number">8+</span>
-        <span class="page-stat-label">Projects Completed</span>
+        <span class="page-stat-number">3</span>
+        <span class="page-stat-label">Completed Projects</span>
       </div>
       <div class="page-stat">
-        <span class="page-stat-number">4</span>
-        <span class="page-stat-label">Technologies</span>
+        <span class="page-stat-number">15+</span>
+        <span class="page-stat-label">Technologies Used</span>
       </div>
       <div class="page-stat">
-        <span class="page-stat-number">100%</span>
-        <span class="page-stat-label">Client Satisfaction</span>
+        <span class="page-stat-number">2</span>
+        <span class="page-stat-label">Group Projects</span>
       </div>
     </div>
     
     <!-- Projects Grid -->
     <div class="projects-grid-full">
       
-      <!-- PROJECT 1 - AnimeWorld -->
+      <!-- PROJECT 1: Task Management System -->
       <div class="project-card">
         <div class="project-num">01</div>
         <div class="project-image">
-          <!-- REPLACE with your actual screenshot -->
-          <img src="https://placehold.co/600x400/1f1f2e/ff4d00?text=AnimeWorld" alt="AnimeWorld Website">
+          <img src="assets/projects/taskmanager.png" alt="Task Management System Dashboard">
         </div>
-        <div class="project-name">AnimeWorld Website</div>
-        <p class="project-desc">A fully responsive website built to showcase anime content with category browsing and a clean, modern UI. Focused on semantic HTML structure and CSS layout mastery.</p>
+        <div class="project-name">Task Management System</div>
+        <p class="project-desc">A full-stack enterprise application with secure JWT authentication. Users can create, edit, delete, search, and filter tasks. Admins can monitor system activity, generate reports, and access an interactive dashboard with charts. Features include email notifications, PDF/CSV exports, and role-based access control.</p>
         <div class="project-tech">
-          <span class="tech-pill">HTML5</span>
-          <span class="tech-pill">CSS3</span>
-          <span class="tech-pill">Responsive Design</span>
+          <span class="tech-pill">Spring Boot</span>
+          <span class="tech-pill">React.js</span>
+          <span class="tech-pill">MySQL</span>
+          <span class="tech-pill">JWT Auth</span>
+          <span class="tech-pill">Bootstrap</span>
+          <span class="tech-pill">Axios</span>
+          <span class="tech-pill">Postman</span>
         </div>
         <div class="project-meta">
-          <span>📅 2024</span>
-          <span>👤 Solo Project</span>
+          <span>📅 2025</span>
+          <span>👥 Group Project (6 members)</span>
+          <span>🏆 Enterprise App</span>
         </div>
         <div class="project-links">
-          <!-- REPLACE # with your actual Live Demo URL -->
-          <a href="#" class="project-link" target="_blank">🔗 Live Demo</a>
-          <!-- REPLACE # with your actual GitHub Repo URL -->
-          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
+          <span class="project-link" style="opacity: 0.6; cursor: default;">🔗 Live Demo (Coming Soon)</span>
+          <a href="https://github.com/Chamindu18/task-management-system" class="project-link" target="_blank">🐙 GitHub</a>
         </div>
       </div>
       
-      <!-- PROJECT 2 - Explore Ceylon -->
+      <!-- PROJECT 2: Salon Nilu -->
       <div class="project-card">
         <div class="project-num">02</div>
         <div class="project-image">
-          <img src="https://placehold.co/600x400/1f1f2e/ffb800?text=Explore+Ceylon" alt="Explore Ceylon">
+          <img src="assets/projects/salonnilu.png" alt="Salon Nilu Beauty Salon Website">
         </div>
-        <div class="project-name">Explore Ceylon</div>
-        <p class="project-desc">A tourism website celebrating Sri Lanka, built as a group project. Features destination showcases, cultural highlights, and a fully responsive layout across all devices.</p>
+        <div class="project-name">Salon Nilu — Beauty Salon</div>
+        <p class="project-desc">A professional PHP-based website for a premium unisex beauty salon offering hairstyling, bridal services, and beauty treatments. Features include responsive homepage, online booking system, service catalog with pricing, customer reviews, gallery, and Google Maps integration. The admin panel provides full CRUD operations, user management with role-based permissions, appointment management, and content updates without coding knowledge.</p>
         <div class="project-tech">
-          <span class="tech-pill">HTML5</span>
-          <span class="tech-pill">CSS3</span>
-          <span class="tech-pill">Group Project</span>
+          <span class="tech-pill">PHP</span>
+          <span class="tech-pill">MySQL</span>
+          <span class="tech-pill">HTML5/CSS3</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Bootstrap 5</span>
+          <span class="tech-pill">XAMPP</span>
         </div>
         <div class="project-meta">
-          <span>📅 2024</span>
-          <span>👥 Group Project (3 members)</span>
+          <span>📅 2025</span>
+          <span>👥 Group Project (9 members)</span>
+          <span>💇 Salon Management</span>
         </div>
         <div class="project-links">
-          <a href="#" class="project-link" target="_blank">🔗 Live Demo</a>
-          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
+          <span class="project-link" style="opacity: 0.6; cursor: default;">🔗 Live Demo (Coming Soon)</span>
+          <a href="https://github.com/SanukaWaravita/SalonNilu" class="project-link" target="_blank">🐙 GitHub</a>
         </div>
       </div>
       
-      <!-- PROJECT 3 - Salon Website -->
+      <!-- PROJECT 3: Portfolio Website -->
       <div class="project-card">
         <div class="project-num">03</div>
         <div class="project-image">
-          <img src="https://placehold.co/600x400/1f1f2e/ff4d00?text=Salon+Website" alt="Salon Website">
-        </div>
-        <div class="project-name">Salon Website</div>
-        <p class="project-desc">A modern, professional salon website with service listings, booking section, and gallery. Built with Bootstrap for a polished, responsive experience across screen sizes.</p>
-        <div class="project-tech">
-          <span class="tech-pill">HTML5</span>
-          <span class="tech-pill">CSS3</span>
-          <span class="tech-pill">Bootstrap</span>
-        </div>
-        <div class="project-meta">
-          <span>📅 2024</span>
-          <span>👤 Solo Project</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link" target="_blank">🔗 Live Demo</a>
-          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
-        </div>
-      </div>
-      
-      <!-- PROJECT 4 - Java Login System -->
-      <div class="project-card">
-        <div class="project-num">04</div>
-        <div class="project-image">
-          <img src="https://placehold.co/600x400/1f1f2e/ffb800?text=Java+Login" alt="Java Login System">
-        </div>
-        <div class="project-name">Java Login System</div>
-        <p class="project-desc">A console-based login system built in Java for an OOP assignment. Demonstrates core OOP principles: encapsulation, classes, and user authentication logic.</p>
-        <div class="project-tech">
-          <span class="tech-pill">Java</span>
-          <span class="tech-pill">OOP</span>
-          <span class="tech-pill">Console App</span>
-        </div>
-        <div class="project-meta">
-          <span>📅 2024</span>
-          <span>👤 Solo Assignment</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
-        </div>
-      </div>
-      
-      <!-- PROJECT 5 - Portfolio Website (This one!) -->
-      <div class="project-card">
-        <div class="project-num">05</div>
-        <div class="project-image">
-          <img src="https://placehold.co/600x400/1f1f2e/ff4d00?text=Portfolio" alt="Portfolio Website">
+          <img src="assets/projects/portfolio.png" alt="Chamindu Portfolio Website">
         </div>
         <div class="project-name">Portfolio Website</div>
-        <p class="project-desc">A modern, animated portfolio website featuring orbital background, custom cursor, responsive design, and a fully functional contact form.</p>
+        <p class="project-desc">A fully responsive, animated portfolio website built from scratch. Features include orbital ring canvas background with particles and blob animation, custom cursor with hover effects, smooth scroll navigation with active section highlighting, animated skill bars, project cards with images and meta information, mobile-responsive hamburger menu, working contact form with Web3Forms integration, and dynamic copyright year. The site is modular with separate CSS, JavaScript, and Canvas files for maintainability.</p>
         <div class="project-tech">
           <span class="tech-pill">HTML5</span>
           <span class="tech-pill">CSS3</span>
-          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">JavaScript (ES6+)</span>
           <span class="tech-pill">Canvas API</span>
+          <span class="tech-pill">Web3Forms</span>
+          <span class="tech-pill">Intersection Observer</span>
+          <span class="tech-pill">Responsive Design</span>
         </div>
         <div class="project-meta">
           <span>📅 2025</span>
           <span>👤 Solo Project</span>
+          <span>⭐ Live Portfolio</span>
         </div>
         <div class="project-links">
-          <a href="index.html" class="project-link" target="_blank">🔗 Live Demo</a>
-          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
+          <a href="https://chamindu18.github.io/Chamindu-Portfolio/" class="project-link" target="_blank">🔗 Live Demo</a>
+          <a href="https://github.com/Chamindu18/Chamindu-Portfolio" class="project-link" target="_blank">🐙 GitHub</a>
         </div>
       </div>
-      
-      <!-- PROJECT 6 - Coming Soon (Template) -->
+
+      <!-- PROJECT 4: Coming Soon -->
       <div class="project-card">
-        <div class="project-num">06</div>
+        <div class="project-num">04</div>
         <div class="project-image">
           <img src="https://placehold.co/600x400/1f1f2e/ffb800?text=Coming+Soon" alt="Coming Soon Project">
         </div>
         <div class="project-name">Next Project</div>
-        <p class="project-desc">A new project is in development. Stay tuned for updates! Something exciting is coming soon.</p>
+        <p class="project-desc">A new project is currently in development. More details will be shared soon. Stay tuned for exciting updates!</p>
         <div class="project-tech">
           <span class="tech-pill">React</span>
           <span class="tech-pill">Node.js</span>
@@ -293,35 +285,9 @@
           <span>👤 In Progress</span>
         </div>
         <div class="project-links">
-          <span class="project-link" style="opacity: 0.5;">🔗 Coming Soon</span>
+          <span class="project-link" style="opacity: 0.5; cursor: default;">🔗 Coming Soon</span>
         </div>
       </div>
-      
-      <!-- 
-        TEMPLATE FOR ADDING MORE PROJECTS:
-        
-        <div class="project-card">
-          <div class="project-num">07</div>
-          <div class="project-image">
-            <img src="assets/projects/your-project.jpg" alt="Project Name">
-          </div>
-          <div class="project-name">Your Project Name</div>
-          <p class="project-desc">Your project description goes here. Keep it concise but informative.</p>
-          <div class="project-tech">
-            <span class="tech-pill">Tech 1</span>
-            <span class="tech-pill">Tech 2</span>
-            <span class="tech-pill">Tech 3</span>
-          </div>
-          <div class="project-meta">
-            <span>📅 2025</span>
-            <span>👤 Solo/Group</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link" target="_blank">🔗 Live Demo</a>
-            <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
-          </div>
-        </div>
-      -->
       
     </div>
   </div>
@@ -345,7 +311,7 @@
   // Dynamic copyright year
   document.getElementById('currentYear').textContent = new Date().getFullYear();
   
-  // Mobile menu functionality (if not already in main.js for this page)
+  // Mobile menu functionality
   const hamburger = document.getElementById('hamburger');
   const mobMenu = document.getElementById('mobMenu');
   const mobClose = document.getElementById('mobClose');

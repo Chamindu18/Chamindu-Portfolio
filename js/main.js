@@ -1,8 +1,6 @@
 // Main JavaScript - Cursor, Navigation, Reveal Animations, Skill Bars, Form, Mobile Menu
 
-// ============================================
-// 1. Cursor Animation (Desktop only)
-// ============================================
+// 1. Cursor Animation 
 const dot = document.getElementById('cur-dot');
 const ring = document.getElementById('cur-ring');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -30,9 +28,7 @@ if (!('ontouchstart' in window)) {
   document.body.style.cursor = 'auto';
 }
 
-// ============================================
 // 2. Navbar Scroll Effect
-// ============================================
 window.addEventListener('scroll', () => {
   const navbar = document.getElementById('navbar');
   if (navbar) {
@@ -56,9 +52,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ============================================
 // 3. Mobile Menu
-// ============================================
 const hamburger = document.getElementById('hamburger');
 const mobMenu = document.getElementById('mobMenu');
 const mobClose = document.getElementById('mobClose');
@@ -72,19 +66,14 @@ function closeMob() {
   if (mobMenu) mobMenu.classList.remove('open');
 }
 window.closeMob = closeMob;
-
 // Close mobile menu when a link is clicked (already in inline onclick)
 
-// ============================================
 // 4. Reveal Animations (Intersection Observer)
-// ============================================
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Optional: unobserve after animation to improve performance
-        // revealObserver.unobserve(entry.target);
       }
     });
   },
@@ -93,9 +82,7 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// ============================================
 // 5. Skill Bars Animation (One-time)
-// ============================================
 const skillsSection = document.getElementById('skills');
 let skillsAnimated = false; // Flag to prevent re-animation
 
@@ -110,7 +97,7 @@ const barObserver = new IntersectionObserver(
             bar.style.width = width + '%';
           }
         });
-        // Optional: unobserve after animation
+        // unobserve after animation
         barObserver.unobserve(entry.target);
       }
     });
@@ -122,9 +109,7 @@ if (skillsSection) {
   barObserver.observe(skillsSection);
 }
 
-// ============================================
 // 6. Web3Forms AJAX Submission (FormSubmit replacement)
-// ============================================
 const web3form = document.getElementById('web3form');
 const formOk = document.getElementById('form-ok');
 const submitBtn = document.getElementById('submitBtn');
@@ -178,17 +163,13 @@ if (web3form && submitBtn) {
   });
 }
 
-// ============================================
-// 7. Dynamic Copyright Year (already in index.html, but add fallback)
-// ============================================
+// 7. Dynamic Copyright Year 
 const yearSpan = document.getElementById('currentYear');
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
 
-// ============================================
-// 8. Smooth scroll for all anchor links (optional enhancement)
-// ============================================
+// 8. Smooth scroll for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const targetId = this.getAttribute('href');
@@ -208,9 +189,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ============================================
 // 9. Performance: Reduce canvas load on mobile (optional hint for canvas.js)
-// ============================================
 if ('ontouchstart' in window) {
   // Add a meta tag or class to body for canvas.js to read
   document.body.classList.add('touch-device');
