@@ -7,13 +7,24 @@
   --accent: #ff4d00;
   --accent2: #ffb800;
   --text: #e8e8f0;
-  --muted: #6b6b80;
+  --muted: #a0a0b5;
   --white: #ffffff;
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Mono', monospace;
   --font-serif: 'Instrument Serif', serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --tr: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Selection color */
+::selection {
+  background: var(--accent);
+  color: var(--white);
+}
+
+::-moz-selection {
+  background: var(--accent);
+  color: var(--white);
 }
 
 html { scroll-behavior: smooth; }
@@ -31,7 +42,18 @@ body {
 
 p {
   font-weight: 450;
-  color: var(--text);  /* Use white instead of muted gray */
+  color: var(--text);
+}
+
+/* Hide custom cursor on form inputs */
+input, textarea, button, a {
+  cursor: auto;
+}
+
+@media (pointer: fine) {
+  input, textarea, button, a {
+    cursor: pointer;
+  }
 }
 
 #bg-canvas {
@@ -80,9 +102,10 @@ body:has(a:hover) #cur-ring, body:has(button:hover) #cur-ring {
   border-color: var(--accent);
 }
 
-::-webkit-scrollbar { width: 4px; }
+/* Scrollbar - wider for better usability */
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
 nav {
   position: fixed;
@@ -208,6 +231,7 @@ nav.scrolled {
 
 .mob-menu a:hover { color: var(--accent); }
 
+/* Larger touch target for close button */
 .mob-close {
   position: absolute;
   top: 2rem;
@@ -217,6 +241,11 @@ nav.scrolled {
   color: var(--text);
   font-size: 1.5rem;
   cursor: pointer;
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 section {
@@ -261,10 +290,11 @@ section {
   font-weight: 400;
 }
 
+/* Enhanced divider */
 .divider {
   width: 100%;
   height: 1px;
-  background: var(--border);
+  background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), var(--accent), transparent);
   position: relative;
   z-index: 2;
 }
@@ -290,7 +320,7 @@ section {
   font-weight: 800;
   font-size: clamp(7rem, 17vw, 19rem);
   color: transparent;
-  -webkit-text-stroke: 1px rgba(31, 31, 46, .55);
+  -webkit-text-stroke: 1px rgba(255, 77, 0, 0.08);
   line-height: 1;
   pointer-events: none;
   user-select: none;
@@ -383,6 +413,7 @@ section {
   transition: var(--tr);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 77, 0, 0.3);
 }
 
 .btn-primary::before {
@@ -398,7 +429,7 @@ section {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px rgba(255, 77, 0, .35);
+  box-shadow: 0 14px 40px rgba(255, 77, 0, .45);
 }
 
 .btn-secondary {
@@ -435,6 +466,7 @@ section {
   font-weight: 800;
   font-size: 2rem;
   color: var(--white);
+  text-shadow: 0 0 10px rgba(255, 77, 0, 0.3);
 }
 
 .stat-num span { color: var(--accent); }
@@ -492,6 +524,7 @@ section {
   max-width: 400px;
 }
 
+/* Fixed: removed padding so image fills frame */
 .about-image-frame {
   width: 100%;
   aspect-ratio: 4/5;
@@ -507,17 +540,18 @@ section {
   color: var(--muted);
   font-size: .78rem;
   text-align: center;
-  padding: 2rem;
+  padding: 0;
 }
 
 .about-image-frame svg { opacity: .25; }
 
+/* Fixed: adjusted accent box position */
 .about-accent-box {
   position: absolute;
-  bottom: -1.5rem;
-  right: -1.5rem;
+  bottom: -1rem;
+  right: -1rem;
   background: var(--accent);
-  padding: 1.1rem 1.4rem;
+  padding: 1rem 1.2rem;
   border-radius: 3px;
   z-index: 10;
 }
@@ -525,13 +559,13 @@ section {
 .about-accent-box p {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: white;
   line-height: 1;
 }
 
 .about-accent-box span {
-  font-size: .68rem;
+  font-size: .65rem;
   color: rgba(255, 255, 255, .7);
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -651,6 +685,18 @@ section {
   font-size: 1rem;
   color: var(--white);
   margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.skills-bars h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
 }
 
 .skill-bar-item { margin-bottom: 1.3rem; }
@@ -667,7 +713,7 @@ section {
   color: var(--accent);
 }
 .skill-bar-track {
-  height: 3px;
+  height: 4px;
   background: var(--border);
   border-radius: 2px;
   overflow: hidden;
@@ -690,6 +736,16 @@ section {
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Projects header buttons layout */
+.projects-header-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .projects-grid {
@@ -704,13 +760,13 @@ section {
 
 .project-card {
   background: rgba(17, 17, 24, .92);
-  padding: 2.2rem;
+  padding: 2rem;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: .9rem;
-  transition: background .3s;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s, background .3s;
 }
 
 .project-card::after {
@@ -725,7 +781,52 @@ section {
 }
 
 .project-card:hover::after { height: 100%; }
-.project-card:hover { background: rgba(255, 77, 0, .05); }
+.project-card:hover {
+  background: rgba(255, 77, 0, .05);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Featured project styling */
+.project-card.featured {
+  border: 1px solid rgba(255, 77, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 77, 0, 0.15);
+  background: rgba(255, 77, 0, 0.03);
+}
+
+.project-card.featured .project-num {
+  color: var(--accent2);
+}
+
+/* Project images */
+.project-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  background: var(--border);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* Project meta info */
+.project-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
 
 .project-num {
   font-family: var(--font-display);
@@ -747,7 +848,7 @@ section {
 .project-desc {
   color: var(--muted);
   font-size: .84rem;
-  line-height: 1.8;
+  line-height: 1.7;
   flex: 1;
 }
 
@@ -756,7 +857,7 @@ section {
   background: rgba(255, 77, 0, .08);
   border: 1px solid rgba(255, 77, 0, .2);
   color: var(--accent);
-  padding: .22rem .65rem;
+  padding: .22rem .7rem;
   border-radius: 100px;
   font-size: .7rem;
 }
@@ -770,8 +871,27 @@ section {
   align-items: center;
   gap: .35rem;
   transition: color .2s;
+  position: relative;
 }
-.project-link:hover { color: var(--accent); }
+
+.project-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
+
+.project-link:hover::after {
+  width: 100%;
+}
 
 #education { background: transparent; }
 .edu-grid {
@@ -789,6 +909,7 @@ section {
   overflow: hidden;
   transition: border-color .3s, transform .3s;
   background: rgba(17, 17, 24, .85);
+  min-height: 100%;
 }
 
 .edu-card::before {
@@ -812,10 +933,10 @@ section {
 
 .edu-badge {
   display: inline-block;
-  background: rgba(255, 77, 0, .1);
-  border: 1px solid rgba(255, 77, 0, .2);
+  background: rgba(255, 77, 0, .15);
+  border: 1px solid rgba(255, 77, 0, .3);
   color: var(--accent);
-  padding: .25rem .75rem;
+  padding: .25rem .8rem;
   border-radius: 2px;
   font-size: .7rem;
   letter-spacing: .1em;
@@ -972,8 +1093,9 @@ section {
   align-items: center;
   gap: .5rem;
   transition: var(--tr);
-  align-self: flex-start;
+  align-self: center;
 }
+
 .btn-submit:hover {
   background: #ff6620;
   transform: translateY(-2px);
@@ -984,10 +1106,11 @@ section {
   margin-top: .4rem;
   font-size: .78rem;
   color: var(--accent);
+  text-align: center;
 }
 
 footer {
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--border);
   padding: 2.2rem 4rem;
   display: flex;
   justify-content: space-between;
@@ -1067,22 +1190,54 @@ footer {
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   section { padding: 4rem 1.4rem; }
-  #hero { padding: 0 1.4rem; padding-top: 100px; }
+  #hero { padding: 0 1.4rem; padding-top: 120px; }
   .hero-stats { gap: 1.5rem; }
   .form-row { grid-template-columns: 1fr; }
   footer { padding: 1.4rem; flex-direction: column; text-align: center; }
   .hero-bg-text { font-size: 38vw; }
   .about-highlights { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
+  
+  /* Center skill tags on mobile */
+  .skill-tags {
+    justify-content: center;
+  }
+  
+  /* Larger footer links on mobile */
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+  
+  /* Full width submit button on mobile */
+  .btn-submit {
+    align-self: stretch;
+    justify-content: center;
+  }
+  
+  /* Reduce particle count on mobile for better performance */
+  #bg-canvas {
+    opacity: 0.7;
+  }
+  
+  /* Projects header responsive */
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .projects-header-buttons {
+    width: 100%;
+  }
+  
+  .projects-header-buttons .btn-primary,
+  .projects-header-buttons .btn-secondary {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 /* Radiant Orange Border for Profile Picture */
-.about-image-frame {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .radiant-border {
   position: relative;
   width: 100%;
@@ -1098,7 +1253,7 @@ footer {
   object-fit: cover;
   border-radius: 4px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .radiant-border::before {
@@ -1126,25 +1281,169 @@ footer {
 }
 
 @keyframes radiantGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Make the image appear above the background */
-.profile-img {
-  position: relative;
-  z-index: 3;
-}
-
+/* Fix form layout inside contact section */
 .contact-form form {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
   width: 100%;
+}
+
+/* ============================================
+   SUBTLE HOVER EFFECTS (Eye‑friendly)
+   ============================================ */
+
+/* Project Cards - Gentle lift & soft glow */
+.project-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+              box-shadow 0.3s ease,
+              background 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px -12px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 77, 0, 0.2);
+}
+
+/* Education Cards - Same subtle lift */
+.edu-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+              box-shadow 0.3s ease,
+              border-color 0.3s;
+}
+.edu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px -12px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 77, 0, 0.2);
+}
+
+/* Skill Category Cards */
+.skill-category {
+  transition: transform 0.2s ease, box-shadow 0.3s;
+}
+.skill-category:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* Highlight Items */
+.highlight-item {
+  transition: transform 0.2s ease, box-shadow 0.3s, border-color 0.2s;
+}
+.highlight-item:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons - Gentle scale & shadow */
+.btn-primary, .btn-secondary, .btn-submit, .nav-cta, .back-top {
+  transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+              box-shadow 0.2s,
+              background 0.2s;
+}
+.btn-primary:hover, .btn-secondary:hover, .btn-submit:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 20px -8px rgba(255, 77, 0, 0.3);
+}
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+.back-top:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Contact link items - Soft slide */
+.contact-link-item {
+  transition: transform 0.2s ease, background 0.3s, border-color 0.2s, box-shadow 0.3s;
+}
+.contact-link-item:hover {
+  transform: translateX(6px) translateY(-2px);
+  box-shadow: 0 6px 15px -8px rgba(255, 77, 0, 0.2);
+}
+
+/* ============================================
+   SUBTLE MOVING GRADIENT BORDER (Low Opacity)
+   ============================================ */
+
+.project-card,
+.edu-card,
+.skill-category,
+.highlight-item {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Gradient border – much softer and darker */
+.project-card::before,
+.edu-card::before,
+.skill-category::before,
+.highlight-item::before {
+  content: '';
+  position: absolute;
+  inset: -1px;                 /* thinner than before (-2px) */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 77, 0, 0.3),
+    rgba(255, 184, 0, 0.3),
+    rgba(255, 85, 119, 0.3),
+    rgba(255, 77, 0, 0.3),
+    rgba(255, 184, 0, 0.3)
+  );
+  background-size: 300% 100%;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* On hover, show the gradient with low opacity and slower animation */
+.project-card:hover::before,
+.edu-card:hover::before,
+.skill-category:hover::before,
+.highlight-item:hover::before {
+  opacity: 0.6;                /* not fully bright */
+  animation: gradientShift 4s linear infinite; /* slower movement */
+}
+
+/* Ensure inner content stays above */
+.project-card > *,
+.edu-card > *,
+.skill-category > *,
+.highlight-item > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep the left orange bar above the gradient */
+.project-card::after {
+  z-index: 3;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Submit button pulse – very subtle */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 77, 0, 0.2); }
+  70% { box-shadow: 0 0 0 6px rgba(255, 77, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 77, 0, 0); }
+}
+.btn-submit:disabled {
+  opacity: 0.8;
+  animation: pulse 1.5s infinite;
+}
+.btn-submit:active {
+  transform: scale(0.98);
+}

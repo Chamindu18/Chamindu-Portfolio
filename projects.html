@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Projects — Chamindu | Full Stack Developer Portfolio</title>
+  <meta name="description" content="Complete collection of projects by Chamindu — Computer Science Undergraduate & Full Stack Developer at NSBM Green University" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Additional styles specific to projects page */
+    .projects-page {
+      padding-top: 120px;
+      min-height: 100vh;
+    }
+    
+    .back-home {
+      margin-bottom: 2rem;
+    }
+    
+    .back-home .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+    }
+    
+    .back-home .btn-secondary:hover {
+      transform: translateX(-4px);
+    }
+    
+    .projects-header-page {
+      margin-bottom: 3rem;
+    }
+    
+    .projects-grid-full {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .page-stats {
+      display: flex;
+      gap: 2rem;
+      margin: 1.5rem 0 0;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .page-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    
+    .page-stat-number {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+    
+    .page-stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    @media (max-width: 768px) {
+      .projects-page {
+        padding-top: 100px;
+      }
+      
+      .projects-grid-full {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .page-stats {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Chamindu<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#education">Education</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Contact Me &rarr;</a>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#x2715;</button>
+  <a href="index.html#about" onclick="closeMob()">About</a>
+  <a href="index.html#skills" onclick="closeMob()">Skills</a>
+  <a href="index.html#projects" onclick="closeMob()">Projects</a>
+  <a href="index.html#education" onclick="closeMob()">Education</a>
+  <a href="index.html#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- Projects Page Content -->
+<section class="projects-page">
+  <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+    
+    <!-- Back Button -->
+    <div class="back-home">
+      <a href="index.html" class="btn-secondary">
+        ← Back to Portfolio
+      </a>
+    </div>
+    
+    <!-- Header -->
+    <div class="projects-header-page">
+      <div class="section-tag">Complete Collection</div>
+      <h1 class="section-title">All <em>Projects</em></h1>
+      <p class="hero-sub" style="max-width: 700px; margin-top: 1rem;">
+        Here's a complete list of all my work — from web development to programming assignments. 
+        Each project represents a unique challenge and learning opportunity.
+      </p>
+    </div>
+    
+    <!-- Stats -->
+    <div class="page-stats">
+      <div class="page-stat">
+        <span class="page-stat-number">8+</span>
+        <span class="page-stat-label">Projects Completed</span>
+      </div>
+      <div class="page-stat">
+        <span class="page-stat-number">4</span>
+        <span class="page-stat-label">Technologies</span>
+      </div>
+      <div class="page-stat">
+        <span class="page-stat-number">100%</span>
+        <span class="page-stat-label">Client Satisfaction</span>
+      </div>
+    </div>
+    
+    <!-- Projects Grid -->
+    <div class="projects-grid-full">
+      
+      <!-- PROJECT 1 - AnimeWorld -->
+      <div class="project-card">
+        <div class="project-num">01</div>
+        <div class="project-image">
+          <!-- REPLACE with your actual screenshot -->
+          <img src="https://placehold.co/600x400/1f1f2e/ff4d00?text=AnimeWorld" alt="AnimeWorld Website">
+        </div>
+        <div class="project-name">AnimeWorld Website</div>
+        <p class="project-desc">A fully responsive website built to showcase anime content with category browsing and a clean, modern UI. Focused on semantic HTML structure and CSS layout mastery.</p>
+        <div class="project-tech">
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3</span>
+          <span class="tech-pill">Responsive Design</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2024</span>
+          <span>👤 Solo Project</span>
+        </div>
+        <div class="project-links">
+          <!-- REPLACE # with your actual Live Demo URL -->
+          <a href="#" class="project-link" target="_blank">🔗 Live Demo</a>
+          <!-- REPLACE # with your actual GitHub Repo URL -->
+          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
+        </div>
+      </div>
+      
+      <!-- PROJECT 2 - Explore Ceylon -->
+      <div class="project-card">
+        <div class="project-num">02</div>
+        <div class="project-image">
+          <img src="https://placehold.co/600x400/1f1f2e/ffb800?text=Explore+Ceylon" alt="Explore Ceylon">
+        </div>
+        <div class="project-name">Explore Ceylon</div>
+        <p class="project-desc">A tourism website celebrating Sri Lanka, built as a group project. Features destination showcases, cultural highlights, and a fully responsive layout across all devices.</p>
+        <div class="project-tech">
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3</span>
+          <span class="tech-pill">Group Project</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2024</span>
+          <span>👥 Group Project (3 members)</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link" target="_blank">🔗 Live Demo</a>
+          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
+        </div>
+      </div>
+      
+      <!-- PROJECT 3 - Salon Website -->
+      <div class="project-card">
+        <div class="project-num">03</div>
+        <div class="project-image">
+          <img src="https://placehold.co/600x400/1f1f2e/ff4d00?text=Salon+Website" alt="Salon Website">
+        </div>
+        <div class="project-name">Salon Website</div>
+        <p class="project-desc">A modern, professional salon website with service listings, booking section, and gallery. Built with Bootstrap for a polished, responsive experience across screen sizes.</p>
+        <div class="project-tech">
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3</span>
+          <span class="tech-pill">Bootstrap</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2024</span>
+          <span>👤 Solo Project</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link" target="_blank">🔗 Live Demo</a>
+          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
+        </div>
+      </div>
+      
+      <!-- PROJECT 4 - Java Login System -->
+      <div class="project-card">
+        <div class="project-num">04</div>
+        <div class="project-image">
+          <img src="https://placehold.co/600x400/1f1f2e/ffb800?text=Java+Login" alt="Java Login System">
+        </div>
+        <div class="project-name">Java Login System</div>
+        <p class="project-desc">A console-based login system built in Java for an OOP assignment. Demonstrates core OOP principles: encapsulation, classes, and user authentication logic.</p>
+        <div class="project-tech">
+          <span class="tech-pill">Java</span>
+          <span class="tech-pill">OOP</span>
+          <span class="tech-pill">Console App</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2024</span>
+          <span>👤 Solo Assignment</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
+        </div>
+      </div>
+      
+      <!-- PROJECT 5 - Portfolio Website (This one!) -->
+      <div class="project-card">
+        <div class="project-num">05</div>
+        <div class="project-image">
+          <img src="https://placehold.co/600x400/1f1f2e/ff4d00?text=Portfolio" alt="Portfolio Website">
+        </div>
+        <div class="project-name">Portfolio Website</div>
+        <p class="project-desc">A modern, animated portfolio website featuring orbital background, custom cursor, responsive design, and a fully functional contact form.</p>
+        <div class="project-tech">
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Canvas API</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2025</span>
+          <span>👤 Solo Project</span>
+        </div>
+        <div class="project-links">
+          <a href="index.html" class="project-link" target="_blank">🔗 Live Demo</a>
+          <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
+        </div>
+      </div>
+      
+      <!-- PROJECT 6 - Coming Soon (Template) -->
+      <div class="project-card">
+        <div class="project-num">06</div>
+        <div class="project-image">
+          <img src="https://placehold.co/600x400/1f1f2e/ffb800?text=Coming+Soon" alt="Coming Soon Project">
+        </div>
+        <div class="project-name">Next Project</div>
+        <p class="project-desc">A new project is in development. Stay tuned for updates! Something exciting is coming soon.</p>
+        <div class="project-tech">
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Node.js</span>
+          <span class="tech-pill">MongoDB</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 Coming Soon</span>
+          <span>👤 In Progress</span>
+        </div>
+        <div class="project-links">
+          <span class="project-link" style="opacity: 0.5;">🔗 Coming Soon</span>
+        </div>
+      </div>
+      
+      <!-- 
+        TEMPLATE FOR ADDING MORE PROJECTS:
+        
+        <div class="project-card">
+          <div class="project-num">07</div>
+          <div class="project-image">
+            <img src="assets/projects/your-project.jpg" alt="Project Name">
+          </div>
+          <div class="project-name">Your Project Name</div>
+          <p class="project-desc">Your project description goes here. Keep it concise but informative.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Tech 1</span>
+            <span class="tech-pill">Tech 2</span>
+            <span class="tech-pill">Tech 3</span>
+          </div>
+          <div class="project-meta">
+            <span>📅 2025</span>
+            <span>👤 Solo/Group</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link" target="_blank">🔗 Live Demo</a>
+            <a href="#" class="project-link" target="_blank">🐙 GitHub</a>
+          </div>
+        </div>
+      -->
+      
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p class="footer-copy">&copy; <span id="currentYear"></span> <span>Chamindu</span>. Built with consistency &amp; curiosity.</p>
+  <div class="footer-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <a href="#" class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">&uarr;</a>
+</footer>
+
+<!-- Scripts -->
+<script src="js/canvas.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Dynamic copyright year
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+  
+  // Mobile menu functionality (if not already in main.js for this page)
+  const hamburger = document.getElementById('hamburger');
+  const mobMenu = document.getElementById('mobMenu');
+  const mobClose = document.getElementById('mobClose');
+  
+  if (hamburger && mobMenu && mobClose) {
+    hamburger.onclick = () => mobMenu.classList.add('open');
+    mobClose.onclick = () => mobMenu.classList.remove('open');
+  }
+  
+  window.closeMob = function() {
+    if (mobMenu) mobMenu.classList.remove('open');
+  };
+</script>
+</body>
+</html>
