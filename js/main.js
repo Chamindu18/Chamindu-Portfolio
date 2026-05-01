@@ -194,3 +194,15 @@ if ('ontouchstart' in window) {
   // Add a meta tag or class to body for canvas.js to read
   document.body.classList.add('touch-device');
 }
+
+// ============================================
+// 10. Parallax Hero Background Effect (motionsites.ai style)
+// ============================================
+const heroBg = document.querySelector('.hero-bg-text');
+if (heroBg && !('ontouchstart' in window)) {
+  document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth) * 30;
+    const y = (e.clientY / window.innerHeight) * 30;
+    heroBg.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px) translateY(-50%)`;
+  });
+}
