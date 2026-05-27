@@ -18,6 +18,7 @@
   <button class="mob-close" id="mobClose">&#x2715;</button>
   <a href="#about" onclick="closeMob()">About</a>
   <a href="#skills" onclick="closeMob()">Skills</a>
+  <a href="#certificates" onclick="closeMob()">Certificates</a>
   <a href="#projects" onclick="closeMob()">Projects</a>
   <a href="#education" onclick="closeMob()">Education</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
@@ -25,8 +26,11 @@
 <nav id="navbar">
   <a href="#hero" class="nav-logo">Chamindu<span>.</span></a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Contact Me &rarr;</a>
@@ -81,19 +85,248 @@
   <div class="skills-grid reveal">
     <div class="skill-category"><div class="skill-cat-title">🎨 Frontend</div><div class="skill-tags"><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">JavaScript</span><span class="skill-tag">React.js</span><span class="skill-tag">Canvas API</span><span class="skill-tag">Web Audio API</span><span class="skill-tag">Bootstrap</span></div></div>
     <div class="skill-category"><div class="skill-cat-title">⚙️ Backend</div><div class="skill-tags"><span class="skill-tag">Java</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">Python</span><span class="skill-tag">PHP</span><span class="skill-tag">JWT</span></div></div>
-    <div class="skill-category"><div class="skill-cat-title">🗄️ Database</div><div class="skill-tags"><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">SQL</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">🗄️ Database</div><div class="skill-tags"><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">SQL</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">☁️ Cloud & AI</div><div class="skill-tags"><span class="skill-tag">AWS</span><span class="skill-tag">Cloud Computing</span><span class="skill-tag">AI/ML</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Claude AI</span></div></div>
     <div class="skill-category"><div class="skill-cat-title">🛠️ Tools</div><div class="skill-tags"><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">VS Code</span><span class="skill-tag">IntelliJ</span><span class="skill-tag">Postman</span></div></div>
   </div>
   <div class="skills-bars reveal reveal-d1">
     <h3>Proficiency Levels</h3>
-    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">HTML &amp; CSS</span><span class="skill-bar-pct">80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div></div>
-    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">Java &amp; Spring Boot</span><span class="skill-bar-pct">70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div></div>
-    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">Python</span><span class="skill-bar-pct">65%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div></div>
-    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">PHP &amp; MySQL</span><span class="skill-bar-pct">65%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div></div>
-    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">JavaScript &amp; React</span><span class="skill-bar-pct">65%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div></div>
-    <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">Canvas &amp; Game Dev</span><span class="skill-bar-pct">60%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div></div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header">
+        <span class="skill-bar-name">HTML &amp; CSS</span>
+        <span class="skill-bar-pct">80%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="80"></div>
+      </div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header">
+        <span class="skill-bar-name">Java &amp; Spring Boot</span>
+        <span class="skill-bar-pct">70%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="70"></div>
+      </div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header">
+        <span class="skill-bar-name">JavaScript &amp; React</span>
+        <span class="skill-bar-pct">70%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="70"></div>
+      </div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header">
+        <span class="skill-bar-name">Python</span>
+        <span class="skill-bar-pct">65%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="65"></div>
+      </div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header">
+        <span class="skill-bar-name">PHP &amp; MySQL</span>
+        <span class="skill-bar-pct">65%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="65"></div>
+      </div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header">
+        <span class="skill-bar-name">Canvas &amp; Game Dev</span>
+        <span class="skill-bar-pct">65%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="65"></div>
+      </div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header">
+        <span class="skill-bar-name">AWS &amp; Cloud Computing</span>
+        <span class="skill-bar-pct">55%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="55"></div>
+      </div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header">
+        <span class="skill-bar-name">MongoDB &amp; NoSQL</span>
+        <span class="skill-bar-pct">55%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="55"></div>
+      </div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header">
+        <span class="skill-bar-name">AI &amp; Prompt Engineering</span>
+        <span class="skill-bar-pct">50%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="50"></div>
+      </div>
+    </div>
   </div>
 </section>
+<div class="divider"></div>
+
+<!-- ========== CERTIFICATES SECTION ========== -->
+<section id="certificates">
+  <div class="section-tag">Continuous Learning</div>
+  <h2 class="section-title">Certificates &amp;<br><em>achievements</em></h2>
+  
+  <div class="certs-grid">
+    <!-- Certificate 1: AWS Cloud Practitioner -->
+    <div class="cert-card reveal">
+      <div class="cert-image">
+        <img src="assets/certificates/aws.png" alt="AWS Cloud Practitioner Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">AWS Cloud Practitioner Essential</h3>
+        <div class="cert-meta">
+          <span>📅 April 27, 2026</span>
+        </div>
+        <p class="cert-issuer">Simplilearn SkillUP</p>
+        <div class="cert-skills">
+          <span class="skill-pill">AWS</span>
+          <span class="skill-pill">Cloud Computing</span>
+          <span class="skill-pill">EC2</span>
+          <span class="skill-pill">S3</span>
+        </div>
+        <a href="https://simpli-web.app.link/e/tmrtyAmgG2b" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+    <!-- Certificate 2: Agile Scrum Master -->
+    <div class="cert-card reveal reveal-d1">
+      <div class="cert-image">
+        <img src="assets/certificates/agile.png" alt="Agile Scrum Master Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">Agile Scrum Master</h3>
+        <div class="cert-meta">
+          <span>📅 May 4, 2026</span>
+        </div>
+        <p class="cert-issuer">Simplilearn SkillUP</p>
+        <div class="cert-skills">
+          <span class="skill-pill">Agile</span>
+          <span class="skill-pill">Scrum</span>
+          <span class="skill-pill">Sprint Planning</span>
+          <span class="skill-pill">Team Facilitation</span>
+        </div>
+        <a href="https://simpli-web.app.link/e/S9IOffbXR2b" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+    <!-- Certificate 3: Introduction to MongoDB -->
+    <div class="cert-card reveal reveal-d2">
+      <div class="cert-image">
+        <img src="assets/certificates/mongodb.png" alt="MongoDB Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">Introduction to MongoDB</h3>
+        <div class="cert-meta">
+          <span>📅 May 4, 2026</span>
+        </div>
+        <p class="cert-issuer">Online Course Provider</p>
+        <div class="cert-skills">
+          <span class="skill-pill">MongoDB</span>
+          <span class="skill-pill">NoSQL</span>
+          <span class="skill-pill">Database Design</span>
+        </div>
+        <a href="https://simpli-web.app.link/e/MzaIFHeeR2b" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+    <!-- Certificate 4: AI Fluency -->
+    <div class="cert-card reveal reveal-d3">
+      <div class="cert-image">
+        <img src="assets/certificates/fluency.png" alt="AI Fluency Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">AI Fluency: Framework & Foundations</h3>
+        <div class="cert-meta">
+          <span>📅 May, 2026</span>
+        </div>
+        <p class="cert-issuer">ANTHROPIC</p>
+        <div class="cert-skills">
+          <span class="skill-pill">AI</span>
+          <span class="skill-pill">Machine Learning</span>
+          <span class="skill-pill">Prompt Engineering</span>
+        </div>
+        <a href="https://verify.skilljar.com/c/vccd5xp68zpe" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+    <!-- Certificate 5: Claude 101 -->
+    <div class="cert-card reveal">
+      <div class="cert-image">
+        <img src="assets/certificates/101.png" alt="Claude 101 Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">Claude 101</h3>
+        <div class="cert-meta">
+          <span>📅 2026</span>
+        </div>
+        <p class="cert-issuer">ANTHROPIC</p>
+        <div class="cert-skills">
+          <span class="skill-pill">Claude AI</span>
+          <span class="skill-pill">Prompt Engineering</span>
+          <span class="skill-pill">AI Assistant</span>
+        </div>
+        <a href="https://verify.skilljar.com/c/iv3fe95xz2sm" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+    <!-- Certificate 6: Claude Code 101 -->
+    <div class="cert-card reveal reveal-d1">
+      <div class="cert-image">
+        <img src="assets/certificates/code101.png" alt="Claude Code 101 Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">Claude Code 101</h3>
+        <div class="cert-meta">
+          <span>📅 April 22, 2026</span>
+        </div>
+        <p class="cert-issuer">ANTHROPIC</p>
+        <div class="cert-skills">
+          <span class="skill-pill">Claude Code</span>
+          <span class="skill-pill">AI Coding</span>
+          <span class="skill-pill">Code Assistant</span>
+        </div>
+        <a href="https://verify.skilljar.com/c/gqeygquufsh2" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+    <!-- Certificate 7: EF SET English Certificate -->
+    <div class="cert-card reveal reveal-d2">
+      <div class="cert-image">
+        <img src="assets/certificates/efset.png" alt="EF SET English Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">EF SET English Certificate</h3>
+        <div class="cert-meta">
+          <span>📅 April 27, 2026</span>
+          <span>🏆 C1 Advanced</span>
+        </div>
+        <p class="cert-issuer">EF SET</p>
+        <div class="cert-skills">
+          <span class="skill-pill">English C1</span>
+          <span class="skill-pill">Reading: C1 Advanced</span>
+          <span class="skill-pill">Listening: B2</span>
+        </div>
+        <a href="https://cert.efset.org/V6JepZ" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="divider"></div>
 <section id="projects">
   <div class="projects-header reveal">
@@ -123,7 +356,7 @@
         <span class="tech-pill">Bootstrap</span>
       </div>
       <div class="project-meta">
-        <span>📅 2025</span>
+        <span>📅 2026</span>
         <span>👥 Group Project (6 members)</span>
         <span>🏆 Enterprise App</span>
       </div>
@@ -175,7 +408,7 @@
         <span class="tech-pill">Web3Forms</span>
       </div>
       <div class="project-meta">
-        <span>📅 2025</span>
+        <span>📅 2026</span>
         <span>👤 Solo Project</span>
         <span>⭐ Live Portfolio</span>
       </div>
@@ -185,14 +418,14 @@
       </div>
     </div>
 
-    <!-- PROJECT 4: Sentinel Defense (NEW) -->
+    <!-- PROJECT 4: Sentinel Defense -->
     <div class="project-card reveal reveal-d3">
       <div class="project-num">04</div>
       <div class="project-image">
         <img src="assets/projects/sentinel-defense.png" alt="Sentinel Defense - Tower Defense Game">
       </div>
       <div class="project-name">Sentinel Defense</div>
-      <p class="project-desc">A feature-rich, browser-based tower defense game built entirely with vanilla JavaScript. Defend your territory from waves of enemies using strategic tower placement and resource management. Features 10 progressive waves, 4 unique tower types (Archer, Cannon, Frost, Sniper), 5 enemy variants, Web Audio API sound synthesis, particle effects, screen shake, and LocalStorage save/load system.</p>
+      <p class="project-desc">A feature-rich, browser-based tower defense game built entirely with vanilla JavaScript. Defend your territory from waves of enemies using strategic tower placement and resource management. Features 10 progressive waves, 4 unique tower types, 5 enemy variants, Web Audio API sound synthesis, particle effects, screen shake, and LocalStorage save/load system.</p>
       <div class="project-tech">
         <span class="tech-pill">JavaScript (ES6+)</span>
         <span class="tech-pill">HTML5 Canvas</span>
@@ -224,7 +457,7 @@
       <p class="edu-desc">Studying core CS fundamentals while actively building real-world projects to strengthen practical skills.</p>
       <ul class="learning-list">
         <li>Programming &amp; OOP with Java</li>
-        <li>Database Systems (MySQL, PostgreSQL)</li>
+        <li>Database Systems (MySQL, PostgreSQL, MongoDB)</li>
         <li>Data Structures &amp; Algorithms</li>
         <li>Web Technologies &amp; Development</li>
         <li>Cybersecurity Fundamentals</li>
@@ -240,7 +473,8 @@
         <li>React.js &amp; modern frontend</li>
         <li>Spring Boot &amp; Microservices</li>
         <li>Game Development with Canvas API</li>
-        <li>Cybersecurity &amp; ethical hacking basics</li>
+        <li>AWS Cloud &amp; DevOps</li>
+        <li>AI &amp; Prompt Engineering</li>
       </ul>
     </div>
   </div>
@@ -316,7 +550,7 @@
 </section>
 <footer>
   <p class="footer-copy">&copy; <span id="currentYear"></span> <span>Chamindu</span>. Built with consistency &amp; curiosity.</p>
-  <div class="footer-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+  <div class="footer-links"><a href="#about">About</a><a href="#certificates">Certificates</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
   <a href="#hero" class="back-top">&uarr;</a>
 </footer>
 
