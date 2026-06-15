@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Certificates — Chamindu | Full Stack Developer Portfolio</title>
+  <meta name="description" content="Complete collection of certificates earned by Chamindu — Computer Science Undergraduate & Full Stack Developer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Additional styles specific to certificates page */
+    .certificates-page {
+      padding-top: 120px;
+      min-height: 100vh;
+    }
+    
+    .back-home {
+      margin-bottom: 2rem;
+    }
+    
+    .back-home .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+    }
+    
+    .back-home .btn-secondary:hover {
+      transform: translateX(-4px);
+    }
+    
+    .certificates-header-page {
+      margin-bottom: 3rem;
+    }
+    
+    .certificates-grid-full {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    /* Ensure certificate images fit well */
+    .certificates-grid-full .cert-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    
+    .page-stats {
+      display: flex;
+      gap: 2rem;
+      margin: 1.5rem 0 0;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .page-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    
+    .page-stat-number {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+    
+    .page-stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    @media (max-width: 768px) {
+      .certificates-page {
+        padding-top: 100px;
+      }
+      
+      .certificates-grid-full {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .certificates-grid-full .cert-image {
+        height: 160px;
+      }
+      
+      .page-stats {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Chamindu<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#education">Education</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Contact Me &rarr;</a>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#x2715;</button>
+  <a href="index.html#about" onclick="closeMob()">About</a>
+  <a href="index.html#skills" onclick="closeMob()">Skills</a>
+  <a href="certificates.html" onclick="closeMob()">Certificates</a>
+  <a href="index.html#projects" onclick="closeMob()">Projects</a>
+  <a href="index.html#education" onclick="closeMob()">Education</a>
+  <a href="index.html#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- Certificates Page Content -->
+<section class="certificates-page">
+  <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+    
+    <!-- Back Button -->
+    <div class="back-home">
+      <a href="index.html" class="btn-secondary">
+        ← Back to Portfolio
+      </a>
+    </div>
+    
+    <!-- Header -->
+    <div class="certificates-header-page">
+      <div class="section-tag">Continuous Learning</div>
+      <h1 class="section-title gradient-text">All <em>Certificates</em></h1>
+      <p class="hero-sub" style="max-width: 700px; margin-top: 1rem;">
+        A complete collection of my professional certifications — from cloud computing and AI to agile methodologies and language proficiency. 
+        Each certificate represents a commitment to staying current in a rapidly evolving tech landscape.
+      </p>
+    </div>
+    
+    <!-- Stats -->
+    <div class="page-stats">
+      <div class="page-stat">
+        <span class="page-stat-number">8</span>
+        <span class="page-stat-label">Certifications</span>
+      </div>
+      <div class="page-stat">
+        <span class="page-stat-number">6+</span>
+        <span class="page-stat-label">Unique Skills</span>
+      </div>
+      <div class="page-stat">
+        <span class="page-stat-number">2026</span>
+        <span class="page-stat-label">Recent Achievements</span>
+      </div>
+    </div>
+    
+    <!-- Certificates Grid -->
+    <div class="certificates-grid-full">
+      
+      <!-- Certificate 1: AWS Cloud Practitioner -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/aws.png" alt="AWS Cloud Practitioner Certificate">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">AWS Cloud Practitioner Essential</h3>
+          <div class="cert-meta">
+            <span>📅 April 27, 2026</span>
+          </div>
+          <p class="cert-issuer">Simplilearn SkillUP</p>
+          <div class="cert-skills">
+            <span class="skill-pill">AWS</span>
+            <span class="skill-pill">Cloud Computing</span>
+            <span class="skill-pill">EC2</span>
+            <span class="skill-pill">S3</span>
+          </div>
+          <a href="https://simpli-web.app.link/e/tmrtyAmgG2b" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+        </div>
+      </div>
+      
+      <!-- Certificate 2: Agile Scrum Master -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/agile.png" alt="Agile Scrum Master Certificate">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">Agile Scrum Master</h3>
+          <div class="cert-meta">
+            <span>📅 May 4, 2026</span>
+          </div>
+          <p class="cert-issuer">Simplilearn SkillUP</p>
+          <div class="cert-skills">
+            <span class="skill-pill">Agile</span>
+            <span class="skill-pill">Scrum</span>
+            <span class="skill-pill">Sprint Planning</span>
+            <span class="skill-pill">Team Facilitation</span>
+          </div>
+          <a href="https://simpli-web.app.link/e/S9IOffbXR2b" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+        </div>
+      </div>
+      
+      <!-- Certificate 3: Introduction to MongoDB -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/mongodb.png" alt="MongoDB Certificate">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">Introduction to MongoDB</h3>
+          <div class="cert-meta">
+            <span>📅 May 4, 2026</span>
+          </div>
+          <p class="cert-issuer">Simplilearn SkillUP</p>
+          <div class="cert-skills">
+            <span class="skill-pill">MongoDB</span>
+            <span class="skill-pill">NoSQL</span>
+            <span class="skill-pill">Database Design</span>
+          </div>
+          <a href="https://simpli-web.app.link/e/MzaIFHeeR2b" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+        </div>
+      </div>
+      
+      <!-- Certificate 4: AI Fluency -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/fluency.png" alt="AI Fluency Certificate">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">AI Fluency: Framework & Foundations</h3>
+          <div class="cert-meta">
+            <span>📅 May, 2026</span>
+          </div>
+          <p class="cert-issuer">ANTHROPIC</p>
+          <div class="cert-skills">
+            <span class="skill-pill">AI</span>
+            <span class="skill-pill">Machine Learning</span>
+            <span class="skill-pill">Prompt Engineering</span>
+          </div>
+          <a href="https://verify.skilljar.com/c/vccd5xp68zpe" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+        </div>
+      </div>
+      
+      <!-- Certificate 5: Claude 101 -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/101.png" alt="Claude 101 Certificate">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">Claude 101</h3>
+          <div class="cert-meta">
+            <span>📅 2026</span>
+          </div>
+          <p class="cert-issuer">ANTHROPIC</p>
+          <div class="cert-skills">
+            <span class="skill-pill">Claude AI</span>
+            <span class="skill-pill">Prompt Engineering</span>
+            <span class="skill-pill">AI Assistant</span>
+          </div>
+          <a href="https://verify.skilljar.com/c/iv3fe95xz2sm" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+        </div>
+      </div>
+      
+      <!-- Certificate 6: Claude Code 101 -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/code101.png" alt="Claude Code 101 Certificate">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">Claude Code 101</h3>
+          <div class="cert-meta">
+            <span>📅 April 22, 2026</span>
+          </div>
+          <p class="cert-issuer">ANTHROPIC</p>
+          <div class="cert-skills">
+            <span class="skill-pill">Claude Code</span>
+            <span class="skill-pill">AI Coding</span>
+            <span class="skill-pill">Code Assistant</span>
+          </div>
+          <a href="https://verify.skilljar.com/c/gqeygquufsh2" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+        </div>
+      </div>
+      
+      <!-- Certificate 7: EF SET English Certificate -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/efset.png" alt="EF SET English Certificate">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">EF SET English Certificate</h3>
+          <div class="cert-meta">
+            <span>📅 April 27, 2026</span>
+            <span>🏆 C1 Advanced</span>
+          </div>
+          <p class="cert-issuer">EF SET</p>
+          <div class="cert-skills">
+            <span class="skill-pill">English C1</span>
+            <span class="skill-pill">Reading: C1 Advanced</span>
+            <span class="skill-pill">Listening: B2</span>
+          </div>
+          <a href="https://cert.efset.org/V6JepZ" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+        </div>
+      </div>
+      
+      <!-- Certificate 8: Getting Started with DevOps on AWS -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/devops.png" alt="Getting Started with DevOps on AWS">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">Getting Started with DevOps on AWS</h3>
+          <div class="cert-meta">
+            <span>📅 June 14, 2026</span>
+          </div>
+          <p class="cert-issuer">AWS Training & Certification</p>
+          <div class="cert-skills">
+            <span class="skill-pill">DevOps</span>
+            <span class="skill-pill">AWS</span>
+            <span class="skill-pill">CI/CD</span>
+            <span class="skill-pill">Infrastructure as Code</span>
+            <span class="skill-pill">CloudFormation</span>
+            <span class="skill-pill">CodePipeline</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 9: Agile Project Management -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/hpagile.png" alt="Agile Project Management">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">Agile Project Management</h3>
+          <div class="cert-meta">
+            <span>📅 June 14, 2026</span>
+          </div>
+          <p class="cert-issuer">HP Foundation / HP LIFE</p>
+          <div class="cert-skills">
+            <span class="skill-pill">Agile</span>
+            <span class="skill-pill">Scrum</span>
+            <span class="skill-pill">Kanban</span>
+            <span class="skill-pill">Minimal Viable Product(MVP)</span>
+            <span class="skill-pill">Iterative vs Incremental Development</span>
+            <span class="skill-pill">Agile Project Management</span>
+            <span class="skill-pill">Cross-team Collaboration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 10: Customizing and Evaluating LLMs Using Amazon SageMaker JumpStart -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/llms.png" alt="Customizing and Evaluating LLMs Using Amazon SageMaker JumpStart">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">Customizing and Evaluating LLMs Using Amazon SageMaker JumpStart</h3>
+          <div class="cert-meta">
+            <span>📅 June 13, 2026</span>
+          </div>
+          <p class="cert-issuer">AWS Training & Certification</p>
+          <div class="cert-skills">
+            <span class="skill-pill">Large Language Models</span>
+            <span class="skill-pill">Amazon SageMaker</span>
+            <span class="skill-pill">Model Customization</span>
+            <span class="skill-pill">Model Evaluation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 11: Project Manager Job Simulation -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/foragePM.png" alt="Project Manager Job Simulation">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">Project Manager Job Simulation</h3>
+          <div class="cert-meta">
+            <span>📅 May 31, 2026</span>
+          </div>
+          <p class="cert-issuer">Forage</p>
+          <div class="cert-skills">
+            <span class="skill-pill">Developing Key Performance Indicators (KPIs)</span>
+            <span class="skill-pill">Managing Project Dashboards</span>
+            <span class="skill-pill">Project Management</span>
+          </div>
+          <a href="https://www.theforage.com/completion-certificates/YtWaumzWHmKiqP63y/zSefEeEKvojiQqiaH_YtWaumzWHmKiqP63y_6a1bb74b79c3c46991b3d824_1780252218499_completion_certificate.pdf" class="cert-link" target="_blank">📄 Verify Certificate →</a>
+        </div>
+      </div>
+
+      <!-- Certificate 12: SkillShare DevForge – Modern Full Stack Development Workshop -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <img src="assets/certificates/devforge.png" alt="SkillShare DevForge - Modern Full Stack Development Workshop">
+        </div>
+        <div class="cert-content">
+          <h3 class="cert-title">SkillShare DevForge - Modern Full Stack Development Workshop</h3>
+          <div class="cert-meta">
+            <span>📅 June 4, 2026</span>
+          </div>
+          <p class="cert-issuer"> IEEE Student Branch of NSBM Green University</p>
+          <div class="cert-skills">
+            <span class="skill-pill">AI-assisted development</span>
+            <span class="skill-pill">DevOps practices</span>
+            <span class="skill-pill">CI/CD pipelines</span>
+            <span class="skill-pill">Modern Development Workflows</span>
+            <span class="skill-pill">Full-Stack Development</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p class="footer-copy">&copy; <span id="currentYear"></span> <span>Chamindu</span>. Built with consistency &amp; curiosity.</p>
+  <div class="footer-links">
+    <a href="index.html#about">About</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <a href="#" class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">&uarr;</a>
+</footer>
+
+<script src="js/canvas.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+  
+  const hamburger = document.getElementById('hamburger');
+  const mobMenu = document.getElementById('mobMenu');
+  const mobClose = document.getElementById('mobClose');
+  
+  if (hamburger && mobMenu && mobClose) {
+    hamburger.onclick = () => mobMenu.classList.add('open');
+    mobClose.onclick = () => mobMenu.classList.remove('open');
+  }
+  
+  window.closeMob = function() {
+    if (mobMenu) mobMenu.classList.remove('open');
+  };
+</script>
+</body>
+</html>
