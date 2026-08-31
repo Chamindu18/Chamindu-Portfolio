@@ -10,39 +10,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* Additional styles specific to projects page */
     .projects-page {
       padding-top: 120px;
       min-height: 100vh;
     }
-    
-    .back-home {
-      margin-bottom: 2rem;
-    }
-    
+    .back-home { margin-bottom: 2rem; }
     .back-home .btn-secondary {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       background: transparent;
     }
-    
-    .back-home .btn-secondary:hover {
-      transform: translateX(-4px);
-    }
-    
-    .projects-header-page {
-      margin-bottom: 3rem;
-    }
-    
+    .back-home .btn-secondary:hover { transform: translateX(-4px); }
+    .projects-header-page { margin-bottom: 3rem; }
     .projects-grid-full {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
-    
-    /* FIX: Make images fully visible without cropping */
     .projects-grid-full .project-image {
       height: auto;
       min-height: 200px;
@@ -52,14 +38,12 @@
       align-items: center;
       justify-content: center;
     }
-    
     .projects-grid-full .project-image img {
       object-fit: contain;
       width: 100%;
       height: auto;
       max-height: 280px;
     }
-    
     .page-stats {
       display: flex;
       gap: 2rem;
@@ -68,50 +52,29 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    
     .page-stat {
       display: flex;
       align-items: baseline;
       gap: 0.5rem;
     }
-    
     .page-stat-number {
       font-family: var(--font-display);
       font-weight: 800;
       font-size: 1.5rem;
       color: var(--accent);
     }
-    
     .page-stat-label {
       font-size: 0.75rem;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    
     @media (max-width: 768px) {
-      .projects-page {
-        padding-top: 100px;
-      }
-      
-      .projects-grid-full {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      
-      .projects-grid-full .project-image {
-        min-height: 160px;
-        max-height: 220px;
-      }
-      
-      .projects-grid-full .project-image img {
-        max-height: 220px;
-      }
-      
-      .page-stats {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
+      .projects-page { padding-top: 100px; }
+      .projects-grid-full { grid-template-columns: 1fr; gap: 1rem; }
+      .projects-grid-full .project-image { min-height: 160px; max-height: 220px; }
+      .projects-grid-full .project-image img { max-height: 220px; }
+      .page-stats { flex-direction: column; gap: 0.75rem; }
     }
   </style>
 </head>
@@ -146,51 +109,44 @@
   <a href="index.html#contact" onclick="closeMob()">Contact</a>
 </div>
 
-<!-- Projects Page Content -->
 <section class="projects-page">
   <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
     
-    <!-- Back Button -->
     <div class="back-home">
-      <a href="index.html" class="btn-secondary">
-        ← Back to Portfolio
-      </a>
+      <a href="index.html" class="btn-secondary">← Back to Portfolio</a>
     </div>
     
-    <!-- Header -->
     <div class="projects-header-page">
       <div class="section-tag">Complete Collection</div>
       <h1 class="section-title gradient-text">All <em>Projects</em></h1>
       <p class="hero-sub" style="max-width: 700px; margin-top: 1rem;">
-        Here's a complete list of my completed work — full-stack applications, PHP websites, game development, Next.js platforms, and modern interactive portfolios. 
+        Here's a complete list of my completed work — full-stack applications, PHP websites, game development, Next.js platforms, and mobile prototypes.
         Each project represents a unique challenge and learning opportunity.
       </p>
     </div>
     
-    <!-- Stats -->
     <div class="page-stats">
       <div class="page-stat">
-        <span class="page-stat-number">5</span>
+        <span class="page-stat-number">7</span>
         <span class="page-stat-label">Completed Projects</span>
       </div>
       <div class="page-stat">
-        <span class="page-stat-number">25+</span>
+        <span class="page-stat-number">35+</span>
         <span class="page-stat-label">Technologies Used</span>
       </div>
       <div class="page-stat">
-        <span class="page-stat-number">2</span>
+        <span class="page-stat-number">4</span>
         <span class="page-stat-label">Group Projects</span>
       </div>
     </div>
     
-    <!-- Projects Grid -->
     <div class="projects-grid-full">
       
-      <!-- PROJECT 1: CampusX (NEW) -->
+      <!-- PROJECT 1: CampusX -->
       <div class="project-card">
         <div class="project-num">01</div>
         <div class="project-image">
-          <img src="assets/projects/campusx.png" alt="CampusX - Student Marketplace & Dorm Discovery">
+          <img src="assets/projects/campusx.png" alt="CampusX">
         </div>
         <div class="project-name">CampusX</div>
         <p class="project-desc">A modern full-stack student marketplace and dorm discovery platform built with Next.js 15, TypeScript, Tailwind CSS, Prisma, and PostgreSQL. Features include JWT authentication, marketplace listings (buy/sell), dorm discovery with advanced filters, real‑time messaging, saved listings, notifications, reporting system, and a responsive UI with Framer Motion animations. Complete with admin dashboard and role-based access.</p>
@@ -221,7 +177,7 @@
       <div class="project-card">
         <div class="project-num">02</div>
         <div class="project-image">
-          <img src="assets/projects/taskmanager.png" alt="Task Management System Dashboard">
+          <img src="assets/projects/taskmanager.png" alt="Task Management System">
         </div>
         <div class="project-name">Task Management System</div>
         <p class="project-desc">A full-stack enterprise application with secure JWT authentication. Users can create, edit, delete, search, and filter tasks. Admins can monitor system activity, generate reports, and access an interactive dashboard with charts. Features include email notifications, PDF/CSV exports, and role-based access control.</p>
@@ -249,7 +205,7 @@
       <div class="project-card">
         <div class="project-num">03</div>
         <div class="project-image">
-          <img src="assets/projects/salonnilu.png" alt="Salon Nilu Beauty Salon Website">
+          <img src="assets/projects/salonnilu.png" alt="Salon Nilu">
         </div>
         <div class="project-name">Salon Nilu — Beauty Salon</div>
         <p class="project-desc">A professional PHP-based website for a premium unisex beauty salon offering hairstyling, bridal services, and beauty treatments. Features include responsive homepage, online booking system, service catalog with pricing, customer reviews, gallery, and Google Maps integration. The admin panel provides full CRUD operations, user management with role-based permissions, appointment management, and content updates without coding knowledge.</p>
@@ -276,7 +232,7 @@
       <div class="project-card">
         <div class="project-num">04</div>
         <div class="project-image">
-          <img src="assets/projects/portfolio.png" alt="Chamindu Portfolio Website">
+          <img src="assets/projects/portfolio.png" alt="Portfolio Website">
         </div>
         <div class="project-name">Portfolio Website</div>
         <p class="project-desc">A fully responsive, animated portfolio website built from scratch. Features include orbital ring canvas background with particles and blob animation, custom cursor with hover effects, smooth scroll navigation with active section highlighting, animated skill bars, project cards with images and meta information, mobile-responsive hamburger menu, working contact form with Web3Forms integration, and dynamic copyright year. The site is modular with separate CSS, JavaScript, and Canvas files for maintainability.</p>
@@ -304,7 +260,7 @@
       <div class="project-card">
         <div class="project-num">05</div>
         <div class="project-image">
-          <img src="assets/projects/sentinel-defense.png" alt="Sentinel Defense - Tower Defense Game">
+          <img src="assets/projects/sentinel-defense.png" alt="Sentinel Defense">
         </div>
         <div class="project-name">Sentinel Defense</div>
         <p class="project-desc">A feature-rich, browser-based tower defense game built entirely with vanilla JavaScript. Defend your territory from waves of enemies using strategic tower placement and resource management. Features 10 progressive waves, 4 unique tower types (Archer, Cannon, Frost, Sniper), 5 enemy variants, Web Audio API sound synthesis, particle effects, screen shake, and LocalStorage save/load system. Built with 2,500+ lines of pure JavaScript.</p>
@@ -326,11 +282,67 @@
         </div>
       </div>
 
-      <!-- PROJECT 6: Coming Soon -->
+      <!-- PROJECT 6: TalentFlowOS -->
       <div class="project-card">
         <div class="project-num">06</div>
         <div class="project-image">
-          <img src="https://placehold.co/600x400/1f1f2e/ffb800?text=Coming+Soon" alt="Coming Soon Project">
+          <img src="assets/projects/talentflowos.png" alt="TalentFlowOS">
+        </div>
+        <div class="project-name">TalentFlowOS — AI-Powered Recruitment Platform</div>
+        <p class="project-desc">A full-stack recruitment and talent management platform with role-based access for Candidates, Recruiters, Hiring Managers, and Administrators. Features include JWT authentication, job posting, application management, interview scheduling, AI-powered resume matching, and candidate ranking. Built with Clean Architecture, ASP.NET Core, React, TypeScript, Entity Framework Core, and PostgreSQL.</p>
+        <div class="project-tech">
+          <span class="tech-pill">ASP.NET Core</span>
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">Entity Framework Core</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">JWT</span>
+          <span class="tech-pill">SMTP</span>
+          <span class="tech-pill">Clean Architecture</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2026</span>
+          <span>👥 Group Project (5 members)</span>
+          <span>🏆 Enterprise App</span>
+        </div>
+        <div class="project-links">
+          <span class="project-link" style="opacity: 0.6; cursor: default;">🔗 Live Demo (Coming Soon)</span>
+          <a href="https://github.com/Chamindu18/TalentFlowOS" class="project-link" target="_blank">🐙 GitHub</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 7: LifeLink SL -->
+      <div class="project-card">
+        <div class="project-num">07</div>
+        <div class="project-image">
+          <img src="assets/projects/lifelink.png" alt="LifeLink SL - Blood Donation Mobile App">
+        </div>
+        <div class="project-name">LifeLink SL — Blood Donation Mobile App</div>
+        <p class="project-desc">A user-centered mobile application designed to connect blood donors, hospitals, and the community. Features include emergency blood requests, community engagement, first-time donor guidance, eligibility checker, multilingual support (Sinhala, Tamil, English), low data mode, SMS notifications, and accessibility-focused design. Built following HCI principles with a focus on inclusivity, usability, and visual consistency.</p>
+        <div class="project-tech">
+          <span class="tech-pill">Figma</span>
+          <span class="tech-pill">User-Centered Design</span>
+          <span class="tech-pill">UI/UX Design</span>
+          <span class="tech-pill">Interactive Prototyping</span>
+          <span class="tech-pill">Accessibility</span>
+          <span class="tech-pill">Design System</span>
+          <span class="tech-pill">HCI Principles</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2026</span>
+          <span>👥 Group Project (10 members)</span>
+          <span>📱 Mobile Prototype</span>
+        </div>
+        <div class="project-links">
+          <a href="https://www.figma.com/design/qqQo5vEfmywMQ67sk2mgjX/LifeLink---Mobile-App-Design?node-id=600-1160&t=1o3K8gCNQRPRzdGL-1" class="project-link" target="_blank">🎨 Figma Prototype</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 8: Coming Soon -->
+      <div class="project-card">
+        <div class="project-num">08</div>
+        <div class="project-image">
+          <img src="https://placehold.co/600x400/1f1f2e/ffb800?text=Coming+Soon" alt="Coming Soon">
         </div>
         <div class="project-name">Next Project</div>
         <p class="project-desc">A new project is currently in development. More details will be shared soon. Stay tuned for exciting updates!</p>
@@ -352,7 +364,6 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   <p class="footer-copy">&copy; <span id="currentYear"></span> <span>Chamindu</span>. Built with consistency &amp; curiosity.</p>
   <div class="footer-links">
