@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Projects — Chamindu | Full Stack Developer Portfolio</title>
-  <meta name="description" content="Complete collection of projects by Chamindu — Computer Science Undergraduate & Full Stack Developer at NSBM Green University" />
+  <title>All Projects — Chamindu Hansana | Full-Stack Developer</title>
+  <meta name="description" content="Complete collection of projects by Chamindu Hansana — Computer Science undergraduate and full-stack developer at NSBM Green University" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta property="og:title" content="Chamindu Hansana — Full-Stack Developer" />
+  <meta property="og:description" content="Computer Science undergraduate at NSBM Green University building full-stack web and mobile applications." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230a0a0f'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial' font-weight='800' text-anchor='middle' fill='%23ff4d00'%3EC%3C/text%3E%3C/svg%3E" />
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   <style>
     .projects-page {
       padding-top: 120px;
@@ -25,7 +31,7 @@
     .projects-header-page { margin-bottom: 3rem; }
     .projects-grid-full {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
@@ -89,28 +95,28 @@
   <ul class="nav-links">
     <li><a href="index.html#about">About</a></li>
     <li><a href="index.html#skills">Skills</a></li>
-    <li><a href="index.html#certificates">Certificates</a></li>
     <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#certificates">Certificates</a></li>
     <li><a href="index.html#education">Education</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <a href="index.html#contact" class="nav-cta">Contact Me &rarr;</a>
-  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobMenu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- Mobile Menu -->
 <div class="mob-menu" id="mobMenu">
-  <button class="mob-close" id="mobClose">&#x2715;</button>
+  <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
   <a href="index.html#about" onclick="closeMob()">About</a>
   <a href="index.html#skills" onclick="closeMob()">Skills</a>
-  <a href="index.html#certificates" onclick="closeMob()">Certificates</a>
   <a href="index.html#projects" onclick="closeMob()">Projects</a>
+  <a href="index.html#certificates" onclick="closeMob()">Certificates</a>
   <a href="index.html#education" onclick="closeMob()">Education</a>
   <a href="index.html#contact" onclick="closeMob()">Contact</a>
 </div>
 
 <section class="projects-page">
-  <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+  <div class="container" style="max-width: 1400px; margin: 0 auto;">
     
     <div class="back-home">
       <a href="index.html" class="btn-secondary">← Back to Portfolio</a>
@@ -120,36 +126,33 @@
       <div class="section-tag">Complete Collection</div>
       <h1 class="section-title gradient-text">All <em>Projects</em></h1>
       <p class="hero-sub" style="max-width: 700px; margin-top: 1rem;">
-        Here's a complete list of my completed work — full-stack applications, PHP websites, game development, Next.js platforms, and mobile prototypes.
-        Each project represents a unique challenge and learning opportunity.
+        Here's a complete list of my work — full-stack web applications, a mobile app, a browser game and a UI/UX design prototype. For team projects, I describe the part I built.
       </p>
     </div>
     
     <div class="page-stats">
       <div class="page-stat">
         <span class="page-stat-number">7</span>
-        <span class="page-stat-label">Completed Projects</span>
+        <span class="page-stat-label">Projects</span>
       </div>
       <div class="page-stat">
-        <span class="page-stat-number">35+</span>
-        <span class="page-stat-label">Technologies Used</span>
+        <span class="page-stat-number">3</span>
+        <span class="page-stat-label">Solo Projects</span>
       </div>
       <div class="page-stat">
         <span class="page-stat-number">4</span>
-        <span class="page-stat-label">Group Projects</span>
+        <span class="page-stat-label">Team Projects</span>
       </div>
     </div>
     
     <div class="projects-grid-full">
-      
-      <!-- PROJECT 1: CampusX -->
       <div class="project-card">
         <div class="project-num">01</div>
-        <div class="project-image">
-          <img src="assets/projects/campusx.png" alt="CampusX">
+        <div class="project-image" data-label="CampusX">
+          <img src="assets/projects/campusx.png" loading="lazy" decoding="async" alt="CampusX - Student Marketplace and Dorm Discovery" onerror="this.parentNode.classList.add('no-img'); this.remove();">
         </div>
         <div class="project-name">CampusX</div>
-        <p class="project-desc">A modern full-stack student marketplace and dorm discovery platform built with Next.js 15, TypeScript, Tailwind CSS, Prisma, and PostgreSQL. Features include JWT authentication, marketplace listings (buy/sell), dorm discovery with advanced filters, real‑time messaging, saved listings, notifications, reporting system, and a responsive UI with Framer Motion animations. Complete with admin dashboard and role-based access.</p>
+        <p class="project-desc">A full-stack student marketplace and dorm discovery platform. Students can post and browse listings, filter dorms by university, city and room type, save favourites, message other users, receive notifications and report content. Includes JWT authentication, role-based access and image uploads.</p>
         <div class="project-tech">
           <span class="tech-pill">Next.js 15</span>
           <span class="tech-pill">TypeScript</span>
@@ -158,112 +161,103 @@
           <span class="tech-pill">PostgreSQL</span>
           <span class="tech-pill">JWT</span>
           <span class="tech-pill">UploadThing</span>
-          <span class="tech-pill">Framer Motion</span>
-          <span class="tech-pill">SWR</span>
-          <span class="tech-pill">React Hook Form</span>
         </div>
         <div class="project-meta">
           <span>📅 2026</span>
           <span>👤 Solo Project</span>
-          <span>🏆 Full‑Stack</span>
+          <span>🏆 Full-Stack</span>
         </div>
         <div class="project-links">
-          <a href="https://campusx-cth6ek3ao-chamindu553-3258s-projects.vercel.app" class="project-link" target="_blank">🔗 Live Demo</a>
-          <a href="https://github.com/Chamindu18/campusx" class="project-link" target="_blank">🐙 GitHub</a>
-        </div>
-      </div>
-      
-      <!-- PROJECT 2: Task Management System -->
-      <div class="project-card">
-        <div class="project-num">02</div>
-        <div class="project-image">
-          <img src="assets/projects/taskmanager.png" alt="Task Management System">
-        </div>
-        <div class="project-name">Task Management System</div>
-        <p class="project-desc">A full-stack enterprise application with secure JWT authentication. Users can create, edit, delete, search, and filter tasks. Admins can monitor system activity, generate reports, and access an interactive dashboard with charts. Features include email notifications, PDF/CSV exports, and role-based access control.</p>
-        <div class="project-tech">
-          <span class="tech-pill">Spring Boot</span>
-          <span class="tech-pill">React.js</span>
-          <span class="tech-pill">MySQL</span>
-          <span class="tech-pill">JWT Auth</span>
-          <span class="tech-pill">Bootstrap</span>
-          <span class="tech-pill">Axios</span>
-          <span class="tech-pill">Postman</span>
-        </div>
-        <div class="project-meta">
-          <span>📅 2025</span>
-          <span>👥 Group Project (6 members)</span>
-          <span>🏆 Enterprise App</span>
-        </div>
-        <div class="project-links">
-          <span class="project-link" style="opacity: 0.6; cursor: default;">🔗 Live Demo (Coming Soon)</span>
-          <a href="https://github.com/Chamindu18/task-management-system" class="project-link" target="_blank">🐙 GitHub</a>
-        </div>
-      </div>
-      
-      <!-- PROJECT 3: Salon Nilu -->
-      <div class="project-card">
-        <div class="project-num">03</div>
-        <div class="project-image">
-          <img src="assets/projects/salonnilu.png" alt="Salon Nilu">
-        </div>
-        <div class="project-name">Salon Nilu — Beauty Salon</div>
-        <p class="project-desc">A professional PHP-based website for a premium unisex beauty salon offering hairstyling, bridal services, and beauty treatments. Features include responsive homepage, online booking system, service catalog with pricing, customer reviews, gallery, and Google Maps integration. The admin panel provides full CRUD operations, user management with role-based permissions, appointment management, and content updates without coding knowledge.</p>
-        <div class="project-tech">
-          <span class="tech-pill">PHP</span>
-          <span class="tech-pill">MySQL</span>
-          <span class="tech-pill">HTML5/CSS3</span>
-          <span class="tech-pill">JavaScript</span>
-          <span class="tech-pill">Bootstrap 5</span>
-          <span class="tech-pill">XAMPP</span>
-        </div>
-        <div class="project-meta">
-          <span>📅 2025</span>
-          <span>👥 Group Project (9 members)</span>
-          <span>💇 Salon Management</span>
-        </div>
-        <div class="project-links">
-          <span class="project-link" style="opacity: 0.6; cursor: default;">🔗 Live Demo (Coming Soon)</span>
-          <a href="https://github.com/SanukaWaravita/SalonNilu" class="project-link" target="_blank">🐙 GitHub</a>
-        </div>
-      </div>
-      
-      <!-- PROJECT 4: Portfolio Website -->
-      <div class="project-card">
-        <div class="project-num">04</div>
-        <div class="project-image">
-          <img src="assets/projects/portfolio.png" alt="Portfolio Website">
-        </div>
-        <div class="project-name">Portfolio Website</div>
-        <p class="project-desc">A fully responsive, animated portfolio website built from scratch. Features include orbital ring canvas background with particles and blob animation, custom cursor with hover effects, smooth scroll navigation with active section highlighting, animated skill bars, project cards with images and meta information, mobile-responsive hamburger menu, working contact form with Web3Forms integration, and dynamic copyright year. The site is modular with separate CSS, JavaScript, and Canvas files for maintainability.</p>
-        <div class="project-tech">
-          <span class="tech-pill">HTML5</span>
-          <span class="tech-pill">CSS3</span>
-          <span class="tech-pill">JavaScript (ES6+)</span>
-          <span class="tech-pill">Canvas API</span>
-          <span class="tech-pill">Web3Forms</span>
-          <span class="tech-pill">Intersection Observer</span>
-          <span class="tech-pill">Responsive Design</span>
-        </div>
-        <div class="project-meta">
-          <span>📅 2025</span>
-          <span>👤 Solo Project</span>
-          <span>⭐ Live Portfolio</span>
-        </div>
-        <div class="project-links">
-          <a href="https://chamindu18.github.io/Chamindu-Portfolio/" class="project-link" target="_blank">🔗 Live Demo</a>
-          <a href="https://github.com/Chamindu18/Chamindu-Portfolio" class="project-link" target="_blank">🐙 GitHub</a>
+          <a href="https://campusx-three.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
+          <a href="https://github.com/Chamindu18/Campusx" class="project-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
         </div>
       </div>
 
-      <!-- PROJECT 5: Sentinel Defense -->
+      <div class="project-card">
+        <!-- VERIFY: database is PostgreSQL or SQL Server? Check appsettings.json / EF provider, then fix this pill and the CV. -->
+        <div class="project-num">02</div>
+        <div class="project-image" data-label="TalentFlowOS">
+          <img src="assets/projects/talentflowos.png" loading="lazy" decoding="async" alt="TalentFlowOS - Recruitment Platform" onerror="this.parentNode.classList.add('no-img'); this.remove();">
+        </div>
+        <div class="project-name">TalentFlowOS</div>
+        <p class="project-desc">A multi-role recruitment and talent management platform for candidates, recruiters, hiring managers and administrators, built on a Clean Architecture ASP.NET Core backend. My part: authentication (registration, email verification, login, password reset, JWT role-based authorization), system integration and infrastructure, with unit and integration tests.</p>
+        <div class="project-tech">
+          <span class="tech-pill">ASP.NET Core</span>
+          <span class="tech-pill">C#</span>
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">Entity Framework Core</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">JWT</span>
+          <span class="tech-pill">Clean Architecture</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2026</span>
+          <span>👥 Team Project (5 members)</span>
+          <span>🏆 Enterprise App</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Chamindu18/TalentFlowOS" class="project-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">03</div>
+        <div class="project-image" data-label="PetCare+">
+          <img src="assets/projects/petcare.jpeg" loading="lazy" decoding="async" alt="PetCare+ - Pet Care Mobile App" onerror="this.parentNode.classList.add('no-img'); this.remove();">
+        </div>
+        <div class="project-name">PetCare+</div>
+        <p class="project-desc">A Flutter mobile app for pet owners, veterinary staff and adoption providers, built on Firebase. My part: the app foundation and authentication (email/password, Google Sign-In, password reset and Firestore profile creation). Currently in development.</p>
+        <div class="project-tech">
+          <span class="tech-pill">Flutter</span>
+          <span class="tech-pill">Dart</span>
+          <span class="tech-pill">Firebase Auth</span>
+          <span class="tech-pill">Cloud Firestore</span>
+          <span class="tech-pill">Provider</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2026</span>
+          <span>👥 Team Project (5 members)</span>
+          <span>🚧 In Progress</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Chamindu18/petcare" class="project-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">04</div>
+        <div class="project-image" data-label="Task Management System">
+          <img src="assets/projects/taskmanager.png" loading="lazy" decoding="async" alt="Task Management System" onerror="this.parentNode.classList.add('no-img'); this.remove();">
+        </div>
+        <div class="project-name">Task Management System</div>
+        <p class="project-desc">A full-stack enterprise web app for managing tasks, with JWT authentication, search and filtering, email reminders, PDF/CSV export and an admin dashboard with charts. My part: JWT authentication with Spring Security, and the React authentication layer (auth context, protected routes, Axios client, login and register pages).</p>
+        <div class="project-tech">
+          <span class="tech-pill">Spring Boot</span>
+          <span class="tech-pill">Spring Security</span>
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">MySQL</span>
+          <span class="tech-pill">JWT</span>
+          <span class="tech-pill">Bootstrap</span>
+          <span class="tech-pill">Axios</span>
+        </div>
+        <div class="project-meta">
+          <span>📅 2026</span>
+          <span>👥 Team Project (6 members)</span>
+          <span>🏆 Enterprise App</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Chamindu18/task-management-system" class="project-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+        </div>
+      </div>
+
       <div class="project-card">
         <div class="project-num">05</div>
-        <div class="project-image">
-          <img src="assets/projects/sentinel-defense.png" alt="Sentinel Defense">
+        <div class="project-image" data-label="Sentinel Defense">
+          <img src="assets/projects/sentinel-defense.png" loading="lazy" decoding="async" alt="Sentinel Defense - Tower Defense Game" onerror="this.parentNode.classList.add('no-img'); this.remove();">
         </div>
         <div class="project-name">Sentinel Defense</div>
-        <p class="project-desc">A feature-rich, browser-based tower defense game built entirely with vanilla JavaScript. Defend your territory from waves of enemies using strategic tower placement and resource management. Features 10 progressive waves, 4 unique tower types (Archer, Cannon, Frost, Sniper), 5 enemy variants, Web Audio API sound synthesis, particle effects, screen shake, and LocalStorage save/load system. Built with 2,500+ lines of pure JavaScript.</p>
+        <p class="project-desc">A browser-based tower defense game built with vanilla JavaScript and HTML5 Canvas. Features 10 waves, 4 tower types, 5 enemy types, sound effects synthesized with the Web Audio API, particle effects and saved progress in LocalStorage.</p>
         <div class="project-tech">
           <span class="tech-pill">JavaScript (ES6+)</span>
           <span class="tech-pill">HTML5 Canvas</span>
@@ -277,48 +271,44 @@
           <span>🎮 Tower Defense</span>
         </div>
         <div class="project-links">
-          <a href="https://chamindu18.github.io/sentinel-defense/" class="project-link" target="_blank">🔗 Live Demo</a>
-          <a href="https://github.com/Chamindu18/sentinel-defense" class="project-link" target="_blank">🐙 GitHub</a>
+          <a href="https://chamindu18.github.io/sentinel-defense/" class="project-link" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
+          <a href="https://github.com/Chamindu18/sentinel-defense" class="project-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
         </div>
       </div>
 
-      <!-- PROJECT 6: TalentFlowOS -->
       <div class="project-card">
         <div class="project-num">06</div>
-        <div class="project-image">
-          <img src="assets/projects/talentflowos.png" alt="TalentFlowOS">
+        <div class="project-image" data-label="Portfolio Website">
+          <img src="assets/projects/portfolio.png" loading="lazy" decoding="async" alt="Portfolio Website" onerror="this.parentNode.classList.add('no-img'); this.remove();">
         </div>
-        <div class="project-name">TalentFlowOS — AI-Powered Recruitment Platform</div>
-        <p class="project-desc">A full-stack recruitment and talent management platform with role-based access for Candidates, Recruiters, Hiring Managers, and Administrators. Features include JWT authentication, job posting, application management, interview scheduling, AI-powered resume matching, and candidate ranking. Built with Clean Architecture, ASP.NET Core, React, TypeScript, Entity Framework Core, and PostgreSQL.</p>
+        <div class="project-name">Portfolio Website</div>
+        <p class="project-desc">A responsive, animated portfolio built from scratch: orbital canvas background, custom cursor on desktop, scroll reveal animations, project and certificate pages, and a working contact form with Web3Forms.</p>
         <div class="project-tech">
-          <span class="tech-pill">ASP.NET Core</span>
-          <span class="tech-pill">React</span>
-          <span class="tech-pill">TypeScript</span>
-          <span class="tech-pill">Entity Framework Core</span>
-          <span class="tech-pill">PostgreSQL</span>
-          <span class="tech-pill">JWT</span>
-          <span class="tech-pill">SMTP</span>
-          <span class="tech-pill">Clean Architecture</span>
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3</span>
+          <span class="tech-pill">JavaScript (ES6+)</span>
+          <span class="tech-pill">Canvas API</span>
+          <span class="tech-pill">Web3Forms</span>
+          <span class="tech-pill">Intersection Observer</span>
         </div>
         <div class="project-meta">
-          <span>📅 2026</span>
-          <span>👥 Group Project (5 members)</span>
-          <span>🏆 Enterprise App</span>
+          <span>📅 2025</span>
+          <span>👤 Solo Project</span>
+          <span>⭐ Live Portfolio</span>
         </div>
         <div class="project-links">
-          <span class="project-link" style="opacity: 0.6; cursor: default;">🔗 Live Demo (Coming Soon)</span>
-          <a href="https://github.com/Chamindu18/TalentFlowOS" class="project-link" target="_blank">🐙 GitHub</a>
+          <a href="https://chamindu18.github.io/Chamindu-Portfolio/" class="project-link" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
+          <a href="https://github.com/Chamindu18/Chamindu-Portfolio" class="project-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
         </div>
       </div>
 
-      <!-- PROJECT 7: LifeLink SL -->
       <div class="project-card">
         <div class="project-num">07</div>
-        <div class="project-image">
-          <img src="assets/projects/lifelink.png" alt="LifeLink SL - Blood Donation Mobile App">
+        <div class="project-image" data-label="LifeLink SL">
+          <img src="assets/projects/lifelink.png" loading="lazy" decoding="async" alt="LifeLink SL - Blood Donation Mobile App Design" onerror="this.parentNode.classList.add('no-img'); this.remove();">
         </div>
         <div class="project-name">LifeLink SL — Blood Donation Mobile App</div>
-        <p class="project-desc">A user-centered mobile application designed to connect blood donors, hospitals, and the community. Features include emergency blood requests, community engagement, first-time donor guidance, eligibility checker, multilingual support (Sinhala, Tamil, English), low data mode, SMS notifications, and accessibility-focused design. Built following HCI principles with a focus on inclusivity, usability, and visual consistency.</p>
+        <p class="project-desc">A user-centered mobile app design that connects blood donors, hospitals and the community. Features include emergency blood requests, first-time donor guidance, an eligibility checker, multilingual support (Sinhala, Tamil, English), low data mode and SMS notifications. Designed in Figma following HCI principles, with a focus on inclusivity and usability.</p>
         <div class="project-tech">
           <span class="tech-pill">Figma</span>
           <span class="tech-pill">User-Centered Design</span>
@@ -326,7 +316,6 @@
           <span class="tech-pill">Interactive Prototyping</span>
           <span class="tech-pill">Accessibility</span>
           <span class="tech-pill">Design System</span>
-          <span class="tech-pill">HCI Principles</span>
         </div>
         <div class="project-meta">
           <span>📅 2026</span>
@@ -334,42 +323,19 @@
           <span>📱 Mobile Prototype</span>
         </div>
         <div class="project-links">
-          <a href="https://www.figma.com/design/qqQo5vEfmywMQ67sk2mgjX/LifeLink---Mobile-App-Design?node-id=600-1160&t=1o3K8gCNQRPRzdGL-1" class="project-link" target="_blank">🎨 Figma Prototype</a>
+          <a href="https://www.figma.com/design/qqQo5vEfmywMQ67sk2mgjX/LifeLink---Mobile-App-Design?node-id=600-1160&t=1o3K8gCNQRPRzdGL-1" class="project-link" target="_blank" rel="noopener noreferrer">🎨 Figma Prototype</a>
         </div>
       </div>
-
-      <!-- PROJECT 8: Coming Soon -->
-      <div class="project-card">
-        <div class="project-num">08</div>
-        <div class="project-image">
-          <img src="https://placehold.co/600x400/1f1f2e/ffb800?text=Coming+Soon" alt="Coming Soon">
-        </div>
-        <div class="project-name">Next Project</div>
-        <p class="project-desc">A new project is currently in development. More details will be shared soon. Stay tuned for exciting updates!</p>
-        <div class="project-tech">
-          <span class="tech-pill">React</span>
-          <span class="tech-pill">Node.js</span>
-          <span class="tech-pill">MongoDB</span>
-        </div>
-        <div class="project-meta">
-          <span>📅 Coming Soon</span>
-          <span>👤 In Progress</span>
-        </div>
-        <div class="project-links">
-          <span class="project-link" style="opacity: 0.5; cursor: default;">🔗 Coming Soon</span>
-        </div>
-      </div>
-      
     </div>
   </div>
 </section>
 
 <footer>
-  <p class="footer-copy">&copy; <span id="currentYear"></span> <span>Chamindu</span>. Built with consistency &amp; curiosity.</p>
+  <p class="footer-copy">&copy; <span id="currentYear"></span> <span>Chamindu Hansana</span>. Built with consistency &amp; curiosity.</p>
   <div class="footer-links">
     <a href="index.html#about">About</a>
-    <a href="index.html#certificates">Certificates</a>
     <a href="index.html#projects">Projects</a>
+    <a href="index.html#certificates">Certificates</a>
     <a href="index.html#contact">Contact</a>
   </div>
   <a href="#" class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">&uarr;</a>
@@ -377,21 +343,5 @@
 
 <script src="js/canvas.js"></script>
 <script src="js/main.js"></script>
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-  
-  const hamburger = document.getElementById('hamburger');
-  const mobMenu = document.getElementById('mobMenu');
-  const mobClose = document.getElementById('mobClose');
-  
-  if (hamburger && mobMenu && mobClose) {
-    hamburger.onclick = () => mobMenu.classList.add('open');
-    mobClose.onclick = () => mobMenu.classList.remove('open');
-  }
-  
-  window.closeMob = function() {
-    if (mobMenu) mobMenu.classList.remove('open');
-  };
-</script>
 </body>
 </html>

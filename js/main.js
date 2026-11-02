@@ -1,16 +1,18 @@
-// Main JavaScript - Cursor, Navigation, Reveal Animations, Skill Bars, Form, Mobile Menu
+// Main JavaScript - Cursor, Navigation, Reveal Animations, Form, Mobile Menu
 
-// 1. Cursor Animation 
+// True only for a real mouse/trackpad device (not phones, tablets or touch-only screens)
+const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+// 1. Cursor Animation (desktop only)
 const dot = document.getElementById('cur-dot');
 const ring = document.getElementById('cur-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
 
-// Only enable custom cursor on devices that support hover (non-touch)
-if (!('ontouchstart' in window)) {
+if (hasFinePointer && dot && ring) {
+  let mx = 0, my = 0, rx = 0, ry = 0;
   document.addEventListener('mousemove', e => {
     mx = e.clientX;
     my = e.clientY;
-  });
+  }, { passive: true });
 
   (function tick() {
     dot.style.left = mx + 'px';
@@ -22,187 +24,143 @@ if (!('ontouchstart' in window)) {
     requestAnimationFrame(tick);
   })();
 } else {
-  // Hide custom cursor on touch devices
+  // Touch devices: hide custom cursor and keep the normal one
   if (dot) dot.style.display = 'none';
   if (ring) ring.style.display = 'none';
   document.body.style.cursor = 'auto';
+  document.body.classList.add('touch-device');
 }
 
-// 2. Navbar Scroll Effect
-window.addEventListener('scroll', () => {
+// 2. Navbar scroll effect + active link (throttled to one update per frame)
+let scrollTicking = false;
+function onScroll() {
   const navbar = document.getElementById('navbar');
-  if (navbar) {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-  }
-  
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+
   let current = '';
   document.querySelectorAll('section[id]').forEach(section => {
-    if (window.scrollY >= section.offsetTop - 130) {
-      current = section.id;
-    }
+    if (window.scrollY >= section.offsetTop - 130) current = section.id;
   });
-  
   document.querySelectorAll('.nav-links a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === '#' + current) {
-      link.style.color = 'var(--white)';
-    } else {
-      link.style.color = '';
-    }
+    link.style.color = link.getAttribute('href') === '#' + current ? 'var(--white)' : '';
   });
-});
+  scrollTicking = false;
+}
+window.addEventListener('scroll', () => {
+  if (!scrollTicking) {
+    scrollTicking = true;
+    requestAnimationFrame(onScroll);
+  }
+}, { passive: true });
+onScroll();
 
-// 3. Mobile Menu
+// 3. Mobile Menu (accessible, locks page scroll while open, closes with Escape)
 const hamburger = document.getElementById('hamburger');
 const mobMenu = document.getElementById('mobMenu');
 const mobClose = document.getElementById('mobClose');
 
-if (hamburger && mobMenu && mobClose) {
-  hamburger.onclick = () => mobMenu.classList.add('open');
-  mobClose.onclick = closeMob;
+function openMob() {
+  if (!mobMenu) return;
+  mobMenu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
 }
-
 function closeMob() {
-  if (mobMenu) mobMenu.classList.remove('open');
+  if (!mobMenu) return;
+  mobMenu.classList.remove('open');
+  document.body.style.overflow = '';
+  if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
 }
 window.closeMob = closeMob;
-// Close mobile menu when a link is clicked (already in inline onclick)
 
-// 4. Reveal Animations (Intersection Observer)
+if (hamburger) hamburger.addEventListener('click', openMob);
+if (mobClose) mobClose.addEventListener('click', closeMob);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMob();
+});
+// Leaving the phone layout (rotate / resize) must not leave the menu stuck open
+window.matchMedia('(min-width: 769px)').addEventListener('change', e => {
+  if (e.matches) closeMob();
+});
+
+// 4. Reveal animations (Intersection Observer)
 const revealObserver = new IntersectionObserver(
-  (entries) => {
+  entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
       }
     });
   },
   { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
 );
-
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// 5. Skill Bars Animation (One-time)
-const skillsSection = document.getElementById('skills');
-let skillsAnimated = false; // Flag to prevent re-animation
-
-const barObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !skillsAnimated) {
-        skillsAnimated = true;
-        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-          const width = bar.dataset.width;
-          if (width) {
-            bar.style.width = width + '%';
-          }
-        });
-        // unobserve after animation
-        barObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.25 }
-);
-
-if (skillsSection) {
-  barObserver.observe(skillsSection);
-}
-
-// 6. Web3Forms AJAX Submission (FormSubmit replacement)
+// 5. Contact form (Web3Forms, AJAX) with inline status messages
 const web3form = document.getElementById('web3form');
 const formOk = document.getElementById('form-ok');
 const submitBtn = document.getElementById('submitBtn');
 
+function showFormMessage(text, isError) {
+  if (!formOk) return;
+  formOk.textContent = text;
+  formOk.style.color = isError ? '#ff6b6b' : '';
+  formOk.style.display = 'block';
+  clearTimeout(showFormMessage.timer);
+  showFormMessage.timer = setTimeout(() => { formOk.style.display = 'none'; }, 8000);
+}
+
 if (web3form && submitBtn) {
-  web3form.addEventListener('submit', async function(e) {
+  if (formOk) formOk.setAttribute('role', 'status');
+  web3form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    
-    // Disable button & show loading state
+
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
-    
-    // Collect form data
-    const formData = new FormData(web3form);
-    
+
     try {
       const response = await fetch(web3form.action, {
         method: 'POST',
-        body: formData
+        body: new FormData(web3form)
       });
-      
-      // Web3Forms returns JSON with success field
       const result = await response.json();
-      
+
       if (result.success) {
-        // Success
         web3form.reset();
-        if (formOk) {
-          formOk.style.display = 'block';
-          setTimeout(() => {
-            formOk.style.display = 'none';
-          }, 8000); // Increased to 8 seconds for better visibility
-        }
+        showFormMessage('✓ Message sent! I\'ll get back to you soon.', false);
       } else {
-        // Show error message from Web3Forms
         let errorMsg = result.message || 'Something went wrong. Please try again.';
         if (result.code === 'domain_not_verified') {
           errorMsg = 'Domain not verified. Please check your Web3Forms settings.';
         }
-        alert('Error: ' + errorMsg);
+        showFormMessage('Error: ' + errorMsg, true);
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('Network error. Please check your connection and try again.');
+      showFormMessage('Network error. Please check your connection and try again.', true);
     } finally {
-      // Re-enable button
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
     }
   });
 }
 
-// 7. Dynamic Copyright Year 
+// 6. Dynamic copyright year
 const yearSpan = document.getElementById('currentYear');
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}
+if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-// 8. Smooth scroll for all anchor links
+// 7. Smooth scroll for same-page anchor links (and close the mobile menu)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+  anchor.addEventListener('click', function (e) {
     const targetId = this.getAttribute('href');
     if (targetId === '#') return;
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
       e.preventDefault();
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-      // Close mobile menu if open
-      if (mobMenu && mobMenu.classList.contains('open')) {
-        closeMob();
-      }
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeMob();
     }
   });
 });
-
-// 9. Performance: Reduce canvas load on mobile (optional hint for canvas.js)
-if ('ontouchstart' in window) {
-  // Add a meta tag or class to body for canvas.js to read
-  document.body.classList.add('touch-device');
-}
-
-// ============================================
-// 10. Parallax Hero Background Effect (motionsites.ai style)
-// ============================================
-const heroBg = document.querySelector('.hero-bg-text');
-if (heroBg && !('ontouchstart' in window)) {
-  document.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth) * 30;
-    const y = (e.clientY / window.innerHeight) * 30;
-    heroBg.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px) translateY(-50%)`;
-  });
-}

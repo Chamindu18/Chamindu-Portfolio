@@ -9,7 +9,7 @@ if (!canvas) {
   let W, H, scrollY = 0, lastSY = 0;
   let animationId = null;
   let lastFrameTime = 0;
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
   
   // Performance settings for mobile
   const MOBILE_PARTICLE_COUNT = 40;    // Reduced from 100
@@ -19,10 +19,13 @@ if (!canvas) {
   let frameCounter = 0;
 
   function resize() {
-    W = canvas.width = window.innerWidth;
+    const newW = window.innerWidth;
+    const widthChanged = newW !== W;
+    W = canvas.width = newW;
     H = canvas.height = window.innerHeight;
-    // Regenerate particles on resize to fit new dimensions
-    regenerateParticles();
+    // Only rebuild particles when the width really changed. On phones the height changes
+    // constantly while scrolling (browser address bar), which used to restart everything.
+    if (widthChanged || parts.length === 0) regenerateParticles();
   }
 
   function regenerateParticles() {
@@ -33,13 +36,19 @@ if (!canvas) {
     }
   }
 
+  let resizeQueued = false;
   window.addEventListener('resize', () => {
-    resize();
+    if (resizeQueued) return;
+    resizeQueued = true;
+    requestAnimationFrame(() => {
+      resizeQueued = false;
+      resize();
+    });
   });
   
   window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
-  });
+  }, { passive: true });
   
   const scrollMax = () => Math.max(1, document.body.scrollHeight - window.innerHeight);
   const sp = () => scrollY / scrollMax();
@@ -125,14 +134,14 @@ if (!canvas) {
       ctx.strokeStyle = `rgba(255,${120 + Math.floor(80 * Math.sin(t * 0.0009))},0,${ring.a * 2.8})`;
       ctx.lineWidth = ring.th * 2.2;
       ctx.shadowColor = 'rgba(255,77,0,0.6)';
-      ctx.shadowBlur = 10;
+      ctx.shadowBlur = isTouchDevice ? 4 : 10;
       ctx.stroke();
       const hx = Math.cos(ae) * r;
       const hy = Math.sin(ae) * r;
       ctx.beginPath();
       ctx.arc(hx, hy, ring.th * 2.8, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(255,190,0,${ring.a * 4.5})`;
-      ctx.shadowBlur = 16;
+      ctx.shadowBlur = isTouchDevice ? 6 : 16;
       ctx.fill();
       ctx.restore();
     });

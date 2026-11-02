@@ -1,43 +1,61 @@
-# Chamindu — Full Stack Developer Portfolio
+# Chamindu Hansana — Portfolio
 
-A modern, animated portfolio website showcasing my work as a Computer Science undergraduate and full‑stack developer.  
-Built with a strong focus on responsive design, performance, and a captivating user experience.
+A responsive, animated portfolio for a Computer Science undergraduate and full-stack developer.
 
-🔗 **Live Demo:** [chamindu18.github.io/Chamindu-Portfolio](https://chamindu18.github.io/Chamindu-Portfolio)
-
----
-
-## ✨ Features
-
-- 🧑‍💻 **3 real‑world projects** – Task Management System (Spring Boot + React), Salon Nilu (PHP + MySQL), and this portfolio itself.
-- 🎨 **Orbital canvas background** – animated rings, particles, and a dynamic blob.
-- 🖱️ **Custom cursor** – smooth, device‑aware (auto‑disabled on touch screens).
-- 📱 **Fully responsive** – optimised for mobile, tablet, and desktop.
-- 🌀 **Smooth scroll & reveal animations** – elements fade in as you scroll.
-- 📊 **Animated skill bars** – show proficiency levels (load only once).
-- 📧 **Working contact form** – integrated with Web3Forms (AJAX, no page reload).
-- 🌙 **Dark theme** – elegant orange accents, high readability.
-- 🧩 **Modular code** – separate CSS, JavaScript, and Canvas files for easy maintenance.
+**Live site:** [chamindu18.github.io/Chamindu-Portfolio](https://chamindu18.github.io/Chamindu-Portfolio/)
 
 ---
 
-## 🛠️ Technologies Used
+## Features
 
-| Category       | Technologies                                      |
-|----------------|---------------------------------------------------|
-| Frontend       | HTML5, CSS3, JavaScript (ES6+)                   |
-| Animation      | Canvas API, CSS Keyframes, Intersection Observer |
-| Fonts          | Google Fonts (Syne, DM Mono, Instrument Serif)   |
-| Icons          | Unicode / Emoji (no external libraries)          |
-| Form handling  | Web3Forms (free, serverless)                     |
-| Deployment     | GitHub Pages / Netlify / Vercel                  |
+- **Pages:** home, all projects, and all courses and certificates
+- **Orbital canvas background** with animated rings, particles and a moving blob (lighter and throttled on phones, paused to a still frame when the system asks for reduced motion)
+- **Custom cursor** on desktop only (automatically disabled on touch devices)
+- **Responsive layout** for phones, tablets and desktop, with an accessible mobile menu
+- **Scroll reveal animations** using the Intersection Observer API
+- **Working contact form** using Web3Forms (AJAX, no page reload, inline success and error messages)
+- **Dark theme** with orange accents
 
----
+## Tech stack
 
-## 🚀 Getting Started
+| Category | Technologies |
+|---|---|
+| Frontend | HTML5, CSS3, JavaScript (ES6+) |
+| Animation | Canvas API, CSS keyframes, Intersection Observer |
+| Fonts | Google Fonts (Syne, DM Mono, Instrument Serif) |
+| Forms | Web3Forms |
+| Hosting | GitHub Pages |
 
-### 1. Clone the repository
+## Project structure
+
+```
+Chamindu-Portfolio/
+├── index.html
+├── projects.html
+├── certificates.html
+├── css/style.css
+├── js/
+│   ├── main.js        # cursor, navigation, menu, reveal animations, form
+│   └── canvas.js      # animated background
+└── assets/
+    ├── Chamindu_Hansana_CV.pdf
+    ├── profile.jpeg
+    ├── projects/      # project screenshots
+    └── certificates/  # certificate images
+```
+
+## Run locally
+
+No build step is needed. Serve the folder with any static server:
 
 ```bash
 git clone https://github.com/Chamindu18/Chamindu-Portfolio.git
 cd Chamindu-Portfolio
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000`.
+
+## Contact
+
+**Chamindu Hansana** · chamindu553@gmail.com · [LinkedIn](https://www.linkedin.com/in/chamindu-hansana-a0b39a362/) · [GitHub](https://github.com/Chamindu18)
