@@ -55,7 +55,7 @@
     </a>
   </div>
   <div class="hero-stats">
-    <div><div class="stat-num">7</div><div class="stat-label">Projects</div></div>
+    <div><div class="stat-num">8</div><div class="stat-label">Projects</div></div>
     <div><div class="stat-num">3<span>rd</span></div><div class="stat-label">Year CS Student</div></div>
     <div><div class="stat-num">3.84<span>/4</span></div><div class="stat-label">GPA</div></div>
   </div>
@@ -101,7 +101,6 @@
   </div>
 </section>
 <div class="divider"></div>
-
 <section id="projects">
   <div class="projects-header reveal">
     <div>
@@ -110,7 +109,7 @@
     </div>
   </div>
   <div class="projects-grid">
-    <div class="project-card reveal">
+<div class="project-card reveal">
       <div class="project-num">01</div>
       <div class="project-image" data-label="CampusX">
         <img src="assets/projects/campusx.png" loading="lazy" decoding="async" alt="CampusX - Student Marketplace and Dorm Discovery" onerror="this.parentNode.classList.add('no-img'); this.remove();">
@@ -137,14 +136,39 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-d1">
-      <!-- VERIFY: database is PostgreSQL or SQL Server? Check appsettings.json / EF provider, then fix this pill and the CV. -->
+<div class="project-card reveal reveal-d1">
       <div class="project-num">02</div>
+      <div class="project-image" data-label="SeatWatch">
+        <img src="assets/projects/seatwatch.png" loading="lazy" decoding="async" alt="SeatWatch software license management dashboard" onerror="this.parentNode.classList.add('no-img'); this.remove();">
+      </div>
+      <div class="project-name">SeatWatch — SaaS License Management</div>
+      <p class="project-desc">An individual full-stack application for managing employee software assignments, tracking license activity, and reviewing estimated subscription spending. Features JWT authentication, server-enforced role-based permissions, 30-day idle-license detection, license lifecycle management and PostgreSQL-backed analytics. Built as a development MVP using manually recorded activity data.</p>
+      <div class="project-tech">
+        <span class="tech-pill">React</span>
+        <span class="tech-pill">Node.js</span>
+        <span class="tech-pill">Express</span>
+        <span class="tech-pill">PostgreSQL</span>
+        <span class="tech-pill">Tailwind CSS</span>
+        <span class="tech-pill">JWT</span>
+      </div>
+      <div class="project-meta">
+        <span>📅 2026</span>
+        <span>👤 Solo Project</span>
+        <span>🛠️ Development MVP</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Chamindu18/Saas-optimizer" class="project-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      </div>
+    </div>
+
+<div class="project-card reveal reveal-d2">
+      <!-- VERIFY: database is PostgreSQL or SQL Server? Check appsettings.json / EF provider, then fix this pill and the CV. -->
+      <div class="project-num">03</div>
       <div class="project-image" data-label="TalentFlowOS">
         <img src="assets/projects/talentflowos.png" loading="lazy" decoding="async" alt="TalentFlowOS - Recruitment Platform" onerror="this.parentNode.classList.add('no-img'); this.remove();">
       </div>
       <div class="project-name">TalentFlowOS</div>
-      <p class="project-desc">A multi-role recruitment and talent management platform for candidates, recruiters, hiring managers and administrators, built on a Clean Architecture ASP.NET Core backend. My part: authentication (registration, email verification, login, password reset, JWT role-based authorization), system integration and infrastructure, with unit and integration tests.</p>
+      <p class="project-desc">A multi-role recruitment and talent management platform for candidates, recruiters, hiring managers and administrators, built on a Clean Architecture ASP.NET Core backend. My part: authentication (registration, email verification, login, password reset, JWT role-based authorization), system integration and infrastructure, with xUnit unit tests.</p>
       <div class="project-tech">
         <span class="tech-pill">ASP.NET Core</span>
         <span class="tech-pill">C#</span>
@@ -165,8 +189,8 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-d2">
-      <div class="project-num">03</div>
+<div class="project-card reveal reveal-d3">
+      <div class="project-num">04</div>
       <div class="project-image" data-label="PetCare+">
         <img src="assets/projects/petcare.jpeg" loading="lazy" decoding="async" alt="PetCare+ - Pet Care Mobile App" onerror="this.parentNode.classList.add('no-img'); this.remove();">
       </div>
@@ -189,8 +213,8 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-d3">
-      <div class="project-num">04</div>
+<div class="project-card reveal">
+      <div class="project-num">05</div>
       <div class="project-image" data-label="Task Management System">
         <img src="assets/projects/taskmanager.png" loading="lazy" decoding="async" alt="Task Management System" onerror="this.parentNode.classList.add('no-img'); this.remove();">
       </div>
@@ -215,8 +239,8 @@
       </div>
     </div>
 
-    <div class="project-card reveal">
-      <div class="project-num">05</div>
+<div class="project-card reveal reveal-d1">
+      <div class="project-num">06</div>
       <div class="project-image" data-label="Sentinel Defense">
         <img src="assets/projects/sentinel-defense.png" loading="lazy" decoding="async" alt="Sentinel Defense - Tower Defense Game" onerror="this.parentNode.classList.add('no-img'); this.remove();">
       </div>
@@ -240,167 +264,53 @@
       </div>
     </div>
   </div>
-
   <!-- View All Projects & GitHub Buttons (moved below grid) -->
   <div class="projects-footer" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem;">
     <a href="projects.html" class="btn-primary" style="padding: 0.7rem 2rem; font-size: 0.9rem;">View All Projects &rarr;</a>
     <a href="https://github.com/Chamindu18" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.7rem 2rem; font-size: 0.9rem;">GitHub &nearr;</a>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <!-- ========== CERTIFICATES SECTION ========== -->
 <section id="certificates">
   <div class="section-tag">Continuous Learning</div>
   <h2 class="section-title">Courses &amp;<br><em>certificates</em></h2>
-  
   <div class="certs-grid">
-    <!-- Certificate 1: AWS Cloud Practitioner -->
-    <div class="cert-card reveal">
+<div class="cert-card reveal">
       <div class="cert-image">
-        <img src="assets/certificates/aws.png" loading="lazy" decoding="async" alt="AWS Cloud Practitioner Certificate">
+        <img src="assets/certificates/SEintern.png" loading="lazy" decoding="async" alt="HackerRank Software Engineer Intern role certification earned November 15 2026">
       </div>
       <div class="cert-content">
-        <h3 class="cert-title">AWS Cloud Practitioner Essentials</h3>
-        <div class="cert-meta">
-          <span>📅 April 27, 2026</span>
-        </div>
-        <p class="cert-issuer">Simplilearn SkillUP</p>
+        <h3 class="cert-title">Software Engineer Intern — Role Certification</h3>
+        <div class="cert-meta"><span>📅 November 15, 2026</span></div>
+        <p class="cert-issuer">HackerRank</p>
         <div class="cert-skills">
-          <span class="skill-pill">AWS</span>
-          <span class="skill-pill">Cloud Computing</span>
-          <span class="skill-pill">EC2</span>
-          <span class="skill-pill">S3</span>
+          <span class="skill-pill">Technical Assessment</span>
+          <span class="skill-pill">Software Engineering</span>
+          <span class="skill-pill">Problem Solving</span>
         </div>
-        <a href="https://simpli-web.app.link/e/tmrtyAmgG2b" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
+        <p class="cert-issuer">Credential ID: 0EEDBB6B7353</p>
       </div>
     </div>
 
-    <!-- Certificate 2: Agile Scrum Master -->
-    <div class="cert-card reveal reveal-d1">
+<div class="cert-card reveal reveal-d1">
       <div class="cert-image">
-        <img src="assets/certificates/agile.png" loading="lazy" decoding="async" alt="Agile Scrum Master Certificate">
+        <img src="assets/certificates/webAPI.png" loading="lazy" decoding="async" alt="Linux Foundation Authentication and Authorization for Web API certificate earned November 15 2026">
       </div>
       <div class="cert-content">
-        <h3 class="cert-title">Agile Scrum Master</h3>
-        <div class="cert-meta">
-          <span>📅 May 4, 2026</span>
-        </div>
-        <p class="cert-issuer">Simplilearn SkillUP</p>
+        <h3 class="cert-title">Authentication and Authorization for Web/API (LFEL1004)</h3>
+        <div class="cert-meta"><span>📅 November 15, 2026</span></div>
+        <p class="cert-issuer">The Linux Foundation</p>
         <div class="cert-skills">
-          <span class="skill-pill">Agile</span>
-          <span class="skill-pill">Scrum</span>
-          <span class="skill-pill">Sprint Planning</span>
-          <span class="skill-pill">Team Facilitation</span>
+          <span class="skill-pill">Authentication</span>
+          <span class="skill-pill">Authorization</span>
+          <span class="skill-pill">Web/API Security</span>
         </div>
-        <a href="https://simpli-web.app.link/e/S9IOffbXR2b" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
+        <p class="cert-issuer">Certificate ID: LF-ymfjeisg5h</p>
       </div>
     </div>
 
-    <!-- Certificate 3: Introduction to MongoDB -->
-    <div class="cert-card reveal reveal-d2">
-      <div class="cert-image">
-        <img src="assets/certificates/mongodb.png" loading="lazy" decoding="async" alt="MongoDB Certificate">
-      </div>
-      <div class="cert-content">
-        <h3 class="cert-title">Introduction to MongoDB</h3>
-        <div class="cert-meta">
-          <span>📅 May 4, 2026</span>
-        </div>
-        <p class="cert-issuer">Simplilearn SkillUP</p>
-        <div class="cert-skills">
-          <span class="skill-pill">MongoDB</span>
-          <span class="skill-pill">NoSQL</span>
-          <span class="skill-pill">Database Design</span>
-        </div>
-        <a href="https://simpli-web.app.link/e/MzaIFHeeR2b" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
-      </div>
-    </div>
-
-    <!-- Certificate 4: AI Fluency -->
-    <div class="cert-card reveal reveal-d3">
-      <div class="cert-image">
-        <img src="assets/certificates/fluency.png" loading="lazy" decoding="async" alt="AI Fluency Certificate">
-      </div>
-      <div class="cert-content">
-        <h3 class="cert-title">AI Fluency: Framework & Foundations</h3>
-        <div class="cert-meta">
-          <span>📅 May 2026</span>
-        </div>
-        <p class="cert-issuer">ANTHROPIC</p>
-        <div class="cert-skills">
-          <span class="skill-pill">AI</span>
-          <span class="skill-pill">AI Collaboration</span>
-          <span class="skill-pill">Prompt Engineering</span>
-        </div>
-        <a href="https://verify.skilljar.com/c/vccd5xp68zpe" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
-      </div>
-    </div>
-
-    <!-- Certificate 5: Claude 101 -->
-    <div class="cert-card reveal">
-      <div class="cert-image">
-        <img src="assets/certificates/101.png" loading="lazy" decoding="async" alt="Claude 101 Certificate">
-      </div>
-      <div class="cert-content">
-        <h3 class="cert-title">Claude 101</h3>
-        <div class="cert-meta">
-          <span>📅 April 2026</span>
-        </div>
-        <p class="cert-issuer">ANTHROPIC</p>
-        <div class="cert-skills">
-          <span class="skill-pill">Claude AI</span>
-          <span class="skill-pill">Prompt Engineering</span>
-          <span class="skill-pill">AI Assistant</span>
-        </div>
-        <a href="https://verify.skilljar.com/c/iv3fe95xz2sm" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
-      </div>
-    </div>
-
-    <!-- Certificate 6: Claude Code 101 -->
-    <div class="cert-card reveal reveal-d1">
-      <div class="cert-image">
-        <img src="assets/certificates/code101.png" loading="lazy" decoding="async" alt="Claude Code 101 Certificate">
-      </div>
-      <div class="cert-content">
-        <h3 class="cert-title">Claude Code 101</h3>
-        <div class="cert-meta">
-          <span>📅 April 22, 2026</span>
-        </div>
-        <p class="cert-issuer">ANTHROPIC</p>
-        <div class="cert-skills">
-          <span class="skill-pill">Claude Code</span>
-          <span class="skill-pill">AI Coding</span>
-          <span class="skill-pill">Code Assistant</span>
-        </div>
-        <a href="https://verify.skilljar.com/c/gqeygquufsh2" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
-      </div>
-    </div>
-
-    <!-- Certificate 7: EF SET English Certificate -->
-    <div class="cert-card reveal reveal-d2">
-      <div class="cert-image">
-        <img src="assets/certificates/efset.png" loading="lazy" decoding="async" alt="EF SET English Certificate">
-      </div>
-      <div class="cert-content">
-        <h3 class="cert-title">EF SET English Certificate</h3>
-        <div class="cert-meta">
-          <span>📅 April 27, 2026</span>
-          <span>🏆 C1 Advanced</span>
-        </div>
-        <p class="cert-issuer">EF SET</p>
-        <div class="cert-skills">
-          <span class="skill-pill">English C1</span>
-          <span class="skill-pill">Reading: C1 Advanced</span>
-          <span class="skill-pill">Listening: B2</span>
-        </div>
-        <a href="https://cert.efset.org/V6JepZ" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
-      </div>
-    </div>
-
-    <!-- Certificate 8: Getting Started with DevOps on AWS -->
-    <div class="cert-card reveal reveal-d3">
+<div class="cert-card reveal reveal-d2">
       <div class="cert-image">
         <img src="assets/certificates/devops.png" loading="lazy" decoding="async" alt="Getting Started with DevOps on AWS">
       </div>
@@ -420,8 +330,105 @@
         </div>
       </div>
     </div>
-  </div>
 
+<div class="cert-card reveal reveal-d3">
+      <div class="cert-image">
+        <img src="assets/certificates/mongodb.png" loading="lazy" decoding="async" alt="MongoDB Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">Introduction to MongoDB</h3>
+        <div class="cert-meta">
+          <span>📅 May 4, 2026</span>
+        </div>
+        <p class="cert-issuer">Simplilearn SkillUP</p>
+        <div class="cert-skills">
+          <span class="skill-pill">MongoDB</span>
+          <span class="skill-pill">NoSQL</span>
+          <span class="skill-pill">Database Design</span>
+        </div>
+        <a href="https://simpli-web.app.link/e/MzaIFHeeR2b" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+<div class="cert-card reveal">
+      <div class="cert-image">
+        <img src="assets/certificates/aws.png" loading="lazy" decoding="async" alt="AWS Cloud Practitioner Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">AWS Cloud Practitioner Essentials</h3>
+        <div class="cert-meta">
+          <span>📅 April 27, 2026</span>
+        </div>
+        <p class="cert-issuer">Simplilearn SkillUP</p>
+        <div class="cert-skills">
+          <span class="skill-pill">AWS</span>
+          <span class="skill-pill">Cloud Computing</span>
+          <span class="skill-pill">EC2</span>
+          <span class="skill-pill">S3</span>
+        </div>
+        <a href="https://simpli-web.app.link/e/tmrtyAmgG2b" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+<div class="cert-card reveal reveal-d1">
+      <div class="cert-image">
+        <img src="assets/certificates/agile.png" loading="lazy" decoding="async" alt="Agile Scrum Master Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">Agile Scrum Master</h3>
+        <div class="cert-meta">
+          <span>📅 May 4, 2026</span>
+        </div>
+        <p class="cert-issuer">Simplilearn SkillUP</p>
+        <div class="cert-skills">
+          <span class="skill-pill">Agile</span>
+          <span class="skill-pill">Scrum</span>
+          <span class="skill-pill">Sprint Planning</span>
+          <span class="skill-pill">Team Facilitation</span>
+        </div>
+        <a href="https://simpli-web.app.link/e/S9IOffbXR2b" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+<div class="cert-card reveal reveal-d2">
+      <div class="cert-image">
+        <img src="assets/certificates/efset.png" loading="lazy" decoding="async" alt="EF SET English Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">EF SET English Certificate</h3>
+        <div class="cert-meta">
+          <span>📅 April 27, 2026</span>
+          <span>🏆 C1 Advanced</span>
+        </div>
+        <p class="cert-issuer">EF SET</p>
+        <div class="cert-skills">
+          <span class="skill-pill">English C1</span>
+          <span class="skill-pill">Reading: C1 Advanced</span>
+          <span class="skill-pill">Listening: B2</span>
+        </div>
+        <a href="https://cert.efset.org/V6JepZ" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
+      </div>
+    </div>
+
+<div class="cert-card reveal reveal-d3">
+      <div class="cert-image">
+        <img src="assets/certificates/code101.png" loading="lazy" decoding="async" alt="Claude Code 101 Certificate">
+      </div>
+      <div class="cert-content">
+        <h3 class="cert-title">Claude Code 101</h3>
+        <div class="cert-meta">
+          <span>📅 April 22, 2026</span>
+        </div>
+        <p class="cert-issuer">ANTHROPIC</p>
+        <div class="cert-skills">
+          <span class="skill-pill">Claude Code</span>
+          <span class="skill-pill">AI Coding</span>
+          <span class="skill-pill">Code Assistant</span>
+        </div>
+        <a href="https://verify.skilljar.com/c/gqeygquufsh2" class="cert-link" target="_blank" rel="noopener noreferrer">📄 Verify Certificate →</a>
+      </div>
+    </div>
+  </div>
   <!-- View All Certificates Button -->
   <div class="cert-footer" style="text-align: center; margin-top: 2.5rem;">
     <a href="certificates.html" class="btn-primary" style="padding: 0.7rem 2rem; font-size: 0.9rem;">View All Certificates →</a>
@@ -433,7 +440,7 @@
   <h2 class="section-title">Education &amp;<br><em>learning path</em></h2>
   <div class="edu-grid">
     <div class="edu-card reveal">
-      <div class="edu-badge">🎓 Current &middot; 2025 &mdash; Expected 2028</div>
+      <div class="edu-badge">🎓 Current &middot; 2025 &mdash; Expected 2029</div>
       <div class="edu-degree">BSc (Hons) Computer Science</div>
       <div class="edu-school">NSBM Green University &middot; Sri Lanka</div>
       <p class="edu-desc">Studying core CS fundamentals while building real-world projects. GPA: 3.84/4.00 after four semesters.</p>
@@ -499,7 +506,6 @@
             <input type="hidden" name="access_key" value="3bc1608f-59bf-44ad-9ea6-47ae36c35475">
             <input type="hidden" name="redirect" value="false">
             <input type="hidden" name="subject" value="New Portfolio Message from Chamindu's Portfolio!">
-            
             <div class="form-row">
                 <div class="form-group">
                     <label for="fname">First Name</label>
@@ -522,9 +528,7 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Tell me what's on your mind..." required></textarea>
             </div>
-    
             <input type="checkbox" name="botcheck" style="display: none;">
-    
             <button type="submit" class="btn-submit" id="submitBtn">Send Message &rarr;</button>
             <p id="form-ok" style="display:none;">✓ Message sent! I'll get back to you soon.</p>
         </form>
@@ -536,7 +540,6 @@
   <div class="footer-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></div>
   <a href="#hero" class="back-top">&uarr;</a>
 </footer>
-
 <script src="js/canvas.js"></script>
 <script src="js/main.js"></script>
 </body>
